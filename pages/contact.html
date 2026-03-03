@@ -4,10 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Contact | TODO: Company Name</title>
-  <meta name="description" content="Contact TODO: Company Name to discuss your project. TODO: response time (plan-based)." />
+  <title>Contact | Immersa 3D</title>
+  <meta name="description" content="Contact Immersa 3D to scope an immersive 3D digital twin. Typical response within 1 business day." />  <link rel="icon" href="../assets/img/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../assets/img/brand/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="../assets/img/brand/favicon-512.png" />
 
-  <link rel="icon" href="../assets/img/placeholders/favicon.svg" />
+
   <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
 
@@ -16,9 +18,8 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="../index.html">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-text">TODO: Company Name</span>
+      <a class="brand" href="../index.html" aria-label="Immersa 3D home">
+        <img src="../assets/img/brand/immersa3dlogo.png" alt="Immersa 3D" style="height:28px;width:auto;display:block" loading="eager" />
       </a>
 
       <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
@@ -28,11 +29,12 @@
 
       <nav id="site-nav" class="site-nav" aria-label="Primary">
         <a href="services.html">Services</a>
+        <a href="how-it-works.html">How it works</a>
         <a href="pricing.html">Pricing</a>
         <a href="case-studies.html">Examples</a>
         <a href="about.html">About</a>
         <a href="faq.html">FAQ</a>
-        <a aria-current="page" class="btn btn-small" href="contact.html">Get a Quote</a>
+        <a class="btn btn-small" href="contact.html">Get a Quote</a>
       </nav>
     </div>
   </header>
@@ -44,12 +46,12 @@
           <h1>Get a Quote</h1>
           <p class="lead">
             Tell us what you’re capturing and what you need delivered. We’ll reply with next steps.
-            <span class="todo-inline">TODO: NEEDS CONFIRMATION (response SLA from plan)</span>
+            
           </p>
 
           <div class="contact-mini">
-            <p class="muted"><strong>Email:</strong> <span class="todo-inline">TODO: NEEDS CONFIRMATION</span></p>
-            <p class="muted"><strong>Service area:</strong> <span class="todo-inline">TODO: NEEDS CONFIRMATION</span></p>
+            <p class="muted"><strong>Email:</strong> <a href="mailto:hello@immersa3d.com">hello@immersa3d.com</a></p>
+            <p class="muted"><strong>Service area:</strong> Ontario, Canada (travel available; hosting worldwide)</p>
           </div>
         </div>
 
@@ -65,9 +67,9 @@
         <div class="card">
           <h2 class="h3">Project details</h2>
 
-          <form id="quoteForm" class="form" action="#" method="post" novalidate data-mailto="TODO:EMAIL@EXAMPLE.COM">
+          <form id="quoteForm" class="form" action="#" method="post" novalidate data-mailto="hello@immersa3d.com">
             <p class="muted note-inline">
-              TODO: CONNECT FORM (Formspree or another form backend). If action="#" the form will use a mailto fallback.
+              Optional: connect a form backend (e.g., Formspree) to receive submissions without email prompts. If left as-is, the form uses an email fallback.
             </p>
 
             <div class="field-row">
@@ -95,9 +97,9 @@
                 <label for="usecase">Use case</label>
                 <select id="usecase" name="usecase" required>
                   <option value="">Select one…</option>
-                  <option>TODO: Use case (replace with plan audiences)</option>
-                  <option>TODO: Use case</option>
-                  <option>TODO: Use case</option>
+                  <option>Digital twin for documentation</option>
+                  <option>Client-facing walkthrough / marketing</option>
+                  <option>Progress capture / periodic updates</option>
                 </select>
                 <small class="error" aria-live="polite"></small>
               </div>
@@ -142,8 +144,8 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <strong>TODO: Company Name</strong>
-        <p class="muted">TODO: Footer statement.</p>
+        <strong>Immersa 3D</strong>
+        <p class="muted">High-fidelity 3D capture, Gaussian-splat processing, and hosted digital twins for teams that need clarity without site visits.</p>
       </div>
       <div>
         <strong>Pages</strong>
@@ -160,11 +162,11 @@
       </div>
       <div>
         <strong>Contact</strong>
-        <p class="muted">Email: <span class="todo-inline">TODO</span></p>
+        <p class="muted">Email: <a href="mailto:hello@immersa3d.com">hello@immersa3d.com</a></p>
       </div>
     </div>
     <div class="container footer-bottom">
-      <small class="muted">© <span id="year"></span> TODO: Company Name.</small>
+      <small class="muted">© <span id="year"></span> Immersa 3D. All rights reserved.</small>
     </div>
   </footer>
 
