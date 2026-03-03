@@ -1,54 +1,174 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-US">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — PortalCam Marketing</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Contact | TODO: Company Name</title>
+  <meta name="description" content="Contact TODO: Company Name to discuss your project. TODO: response time (plan-based)." />
+
+  <link rel="icon" href="../assets/img/placeholders/favicon.svg" />
   <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
+
 <body>
-  <header class="section alt">
-    <div class="container">
-      <h1>Contact</h1>
-      <p>Placeholder contact page. Form wiring is TODO.</p>
-      <div class="cta-row" style="justify-content:flex-start;">
-        <a class="btn primary" href="../index.html">Home</a>
-        <a class="btn" href="pricing.html">Pricing</a>
-      </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">TODO: Company Name</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="burger" aria-hidden="true"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="case-studies.html">Examples</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a aria-current="page" class="btn btn-small" href="contact.html">Get a Quote</a>
+      </nav>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <div class="card">
-        <h3>Send a message</h3>
-        <p style="margin-bottom:12px;">TODO: connect form (Netlify Forms / Formspree / etc.)</p>
-        <form>
-          <div style="display:grid; gap:10px; grid-template-columns: 1fr 1fr;">
-            <input required placeholder="Name" style="padding:12px;border-radius:12px;border:1px solid #e7e7e7;">
-            <input required type="email" placeholder="Email" style="padding:12px;border-radius:12px;border:1px solid #e7e7e7;">
+  <main id="main">
+    <section class="section page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <h1>Get a Quote</h1>
+          <p class="lead">
+            Tell us what you’re capturing and what you need delivered. We’ll reply with next steps.
+            <span class="todo-inline">TODO: NEEDS CONFIRMATION (response SLA from plan)</span>
+          </p>
+
+          <div class="contact-mini">
+            <p class="muted"><strong>Email:</strong> <span class="todo-inline">TODO: NEEDS CONFIRMATION</span></p>
+            <p class="muted"><strong>Service area:</strong> <span class="todo-inline">TODO: NEEDS CONFIRMATION</span></p>
           </div>
-          <div style="margin-top:10px;">
-            <textarea required placeholder="What do you need?" rows="6" style="width:100%;padding:12px;border-radius:12px;border:1px solid #e7e7e7;"></textarea>
-          </div>
-          <div style="margin-top:12px;">
-            <button class="btn primary" type="submit">Send</button>
-          </div>
-        </form>
+        </div>
+
+        <figure class="media-frame">
+          <img src="../assets/img/placeholders/contact-hero.svg" alt="Placeholder: contact hero banner" width="1600" height="900" loading="lazy" />
+          <figcaption class="caption">Placeholder: contact banner / behind-the-scenes capture photo.</figcaption>
+        </figure>
       </div>
-    </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="card">
+          <h2 class="h3">Project details</h2>
+
+          <form id="quoteForm" class="form" action="#" method="post" novalidate data-mailto="TODO:EMAIL@EXAMPLE.COM">
+            <p class="muted note-inline">
+              TODO: CONNECT FORM (Formspree or another form backend). If action="#" the form will use a mailto fallback.
+            </p>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
+                <small class="error" aria-live="polite"></small>
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+                <small class="error" aria-live="polite"></small>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="company">Company (optional)</label>
+                <input id="company" name="company" type="text" autocomplete="organization" />
+                <small class="error" aria-live="polite"></small>
+              </div>
+
+              <div class="field">
+                <label for="usecase">Use case</label>
+                <select id="usecase" name="usecase" required>
+                  <option value="">Select one…</option>
+                  <option>TODO: Use case (replace with plan audiences)</option>
+                  <option>TODO: Use case</option>
+                  <option>TODO: Use case</option>
+                </select>
+                <small class="error" aria-live="polite"></small>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">What do you need delivered?</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Tell us about the space, timeline, and deliverables…"></textarea>
+              <small class="error" aria-live="polite"></small>
+            </div>
+
+            <div class="field checkbox">
+              <label>
+                <input id="consent" name="consent" type="checkbox" required />
+                I agree to be contacted about this inquiry.
+              </label>
+              <small class="error" aria-live="polite"></small>
+            </div>
+
+            <button class="btn" type="submit">Send</button>
+            <p id="formStatus" class="muted" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <aside class="stack">
+          <div class="card">
+            <h2 class="h3">Schedule a call</h2>
+            <p class="muted">Add a scheduling embed here when ready.</p>
+            <img src="../assets/img/placeholders/scheduling.svg" alt="Placeholder: scheduling embed" width="1600" height="900" loading="lazy" />
+          </div>
+
+          <div class="card">
+            <h2 class="h3">Service area</h2>
+            <p class="muted">Replace with your actual coverage area and travel policy (plan-based).</p>
+            <img src="../assets/img/placeholders/map.svg" alt="Placeholder: service area map" width="1600" height="900" loading="lazy" />
+          </div>
+        </aside>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-row">
-      <div>© 2026 Your Company</div>
-      <div class="footer-links">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>TODO: Company Name</strong>
+        <p class="muted">TODO: Footer statement.</p>
       </div>
+      <div>
+        <strong>Pages</strong>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="../index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="case-studies.html">Examples</a>
+          <a href="about.html">About</a>
+          <a href="faq.html">FAQ</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <p class="muted">Email: <span class="todo-inline">TODO</span></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <small class="muted">© <span id="year"></span> TODO: Company Name.</small>
     </div>
   </footer>
 
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/form.js"></script>
 </body>
 </html>

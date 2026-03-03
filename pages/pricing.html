@@ -1,52 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-US">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pricing — PortalCam Marketing</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Pricing | TODO: Company Name</title>
+  <meta name="description" content="TODO: Pricing description from business plan (exact text/structure)." />
+
+  <link rel="icon" href="../assets/img/placeholders/favicon.svg" />
   <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
+
 <body>
-  <header class="section alt">
-    <div class="container">
-      <h1>Pricing</h1>
-      <p>Placeholder pricing page — replace with your real packages from the plan.</p>
-      <div class="cta-row" style="justify-content:flex-start;">
-        <a class="btn primary" href="../index.html">Home</a>
-        <a class="btn" href="contact.html">Contact</a>
-      </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">TODO: Company Name</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="burger" aria-hidden="true"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="services.html">Services</a>
+        <a aria-current="page" href="pricing.html">Pricing</a>
+        <a href="case-studies.html">Examples</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a class="btn btn-small" href="contact.html">Get a Quote</a>
+      </nav>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <div class="grid-3">
-        <div class="card">
-          <h3>Starter</h3>
-          <p>TODO: price</p>
-          <p>TODO: what’s included</p>
+  <main id="main">
+    <section class="section page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <h1>Pricing</h1>
+          <p class="lead">
+            This page is a pricing layout scaffold. Replace all package names, inclusions, and numbers with the exact wording from your business plan.
+            <span class="todo-inline">TODO: NEEDS CONFIRMATION</span>
+          </p>
+          <div class="cta-row">
+            <a class="btn" href="contact.html">Get a Quote</a>
+            <a class="btn btn-ghost" href="services.html">View Services</a>
+          </div>
         </div>
-        <div class="card">
-          <h3>Pro</h3>
-          <p>TODO: price</p>
-          <p>TODO: what’s included</p>
+
+        <figure class="media-frame">
+          <img src="../assets/img/placeholders/pricing-hero.svg" alt="Placeholder: pricing hero banner" width="1600" height="900" loading="lazy" />
+          <figcaption class="caption">Placeholder: pricing banner.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="pricing-grid">
+          <article class="card price-card">
+            <h2 class="h3">TODO: Package Name</h2>
+            <p class="price">$TODO <span class="muted">TODO: per project / per site / etc.</span></p>
+            <p class="muted">TODO: Best for …</p>
+            <ul class="checklist">
+              <li>TODO: Included</li>
+              <li>TODO: Included</li>
+              <li>TODO: Included</li>
+            </ul>
+            <a class="btn btn-small" href="contact.html">Choose this</a>
+          </article>
+
+          <article class="card price-card price-highlight">
+            <div class="badge">Most popular</div>
+            <h2 class="h3">TODO: Package Name</h2>
+            <p class="price">$TODO <span class="muted">TODO: per project / per site / etc.</span></p>
+            <p class="muted">TODO: Best for …</p>
+            <ul class="checklist">
+              <li>TODO: Included</li>
+              <li>TODO: Included</li>
+              <li>TODO: Included</li>
+            </ul>
+            <a class="btn btn-small" href="contact.html">Choose this</a>
+          </article>
+
+          <article class="card price-card">
+            <h2 class="h3">TODO: Package Name</h2>
+            <p class="price">$TODO <span class="muted">TODO: per project / per site / etc.</span></p>
+            <p class="muted">TODO: Best for …</p>
+            <ul class="checklist">
+              <li>TODO: Included</li>
+              <li>TODO: Included</li>
+              <li>TODO: Included</li>
+            </ul>
+            <a class="btn btn-small" href="contact.html">Talk to us</a>
+          </article>
         </div>
-        <div class="card">
-          <h3>Enterprise</h3>
-          <p>TODO: price</p>
-          <p>TODO: what’s included</p>
+
+        <div class="note card">
+          <h2 class="h3">What’s included?</h2>
+          <p>
+            TODO: Add your plan’s exact inclusions, limitations, revision policy, hosting duration, and any ongoing fees.
+            <span class="todo-inline">TODO: NEEDS CONFIRMATION</span>
+          </p>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-row">
-      <div>© 2026 Your Company</div>
-      <div class="footer-links">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>TODO: Company Name</strong>
+        <p class="muted">TODO: Footer statement. <span class="todo-inline">TODO: NEEDS CONFIRMATION</span></p>
       </div>
+      <div>
+        <strong>Pages</strong>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="../index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="case-studies.html">Examples</a>
+          <a href="about.html">About</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <p class="muted">Email: <span class="todo-inline">TODO</span></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <small class="muted">© <span id="year"></span> TODO: Company Name.</small>
     </div>
   </footer>
 
