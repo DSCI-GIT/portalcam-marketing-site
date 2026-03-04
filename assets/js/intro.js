@@ -18,7 +18,7 @@
   // Hide header until intro is done
   header.classList.add("header-hidden");
 
-  // Always show intro on load
+  // Show intro on load
   introSection.style.display = "flex";
   introSection.style.opacity = "1";
   introSection.style.transform = "translateY(0px)";
@@ -29,7 +29,7 @@
   document.documentElement.style.overflow = "hidden";
   document.body.style.overflow = "hidden";
 
-  let progress = 0;       // 0 = full intro, 1 = gone
+  let progress = 0; // 0 = full intro, 1 = gone
   const MIN_PROGRESS = 0;
   const MAX_PROGRESS = 1;
 
@@ -64,6 +64,7 @@
 
     window.removeEventListener("wheel", onWheel, wheelOptions);
     window.removeEventListener("keydown", onKeyDown);
+    window.removeEventListener("touchstart", onTouchStart, touchOptions);
     if (!prefersReduced) {
       window.removeEventListener("pointermove", onPointerMove);
     }
@@ -102,6 +103,15 @@
     }
   }
 
+  // Mobile: single tap anywhere dismisses intro
+  function onTouchStart() {
+    if (progress >= MAX_PROGRESS) return;
+    progress = MAX_PROGRESS;
+    applyIntroState();
+  }
+
+  const touchOptions = { passive: true };
+
   function onPointerMove(e) {
     if (!bgA || !bgB || !bgG) return;
     if (progress >= MAX_PROGRESS) return;
@@ -116,6 +126,9 @@
 
   window.addEventListener("wheel", onWheel, wheelOptions);
   window.addEventListener("keydown", onKeyDown);
+
+  // Add touch handler for phones/tablets
+  window.addEventListener("touchstart", onTouchStart, touchOptions);
 
   if (!prefersReduced) {
     window.addEventListener("pointermove", onPointerMove);
