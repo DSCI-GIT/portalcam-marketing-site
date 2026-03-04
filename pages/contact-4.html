@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
+
+<!-- Full-screen background video -->
+<div class="bg-video-wrapper">
+    <div class="bg-video-overlay"></div>
+    <iframe
+        class="bg-video-iframe"
+        src="https://www.youtube-nocookie.com/embed/vpjOaInpFJ4?autoplay=1&mute=1&loop=1&controls=0&playsinline=1&showinfo=0&playlist=vpjOaInpFJ4"
+        title="Immersa 3D Background"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+    ></iframe>
+</div>
+
 <header>
     <div class="container">
         <nav class="site-nav">
@@ -27,47 +41,83 @@
 </header>
 
 <main class="inner">
-    <div class="container" style="
-        position: relative;
-        border-radius: 18px;
-        padding: 32px 24px 40px;
-        overflow: hidden;
-        background:
-            radial-gradient(circle at 0% 0%, rgba(0,212,255,0.20) 0, transparent 55%),
-            radial-gradient(circle at 100% 100%, rgba(124,58,237,0.20) 0, transparent 55%),
-            #020617;
-        border: 1px solid rgba(15,23,42,0.9);
-        box-shadow: 0 20px 60px rgba(15,23,42,0.9);
-    ">
+    <div class="container">
         <div class="page-header">
-            <h1>Contact</h1>
-            <p>Share a bit about your site, timeline, and what you’d like to capture. I’ll follow up with specific questions and a rough budget range before we book anything.</p>
+            <h1>Get a Quote</h1>
+            <p>Share a bit about your site, timeline, and what you'd like to capture. We'll follow up with specific questions and a rough budget range before we book anything.</p>
         </div>
 
+        <!-- Contact Form Section -->
         <section class="section">
-            <h2>Project Inquiry Form</h2>
-            <p>Please complete the form below with as much detail as you comfortably can. You can always attach additional drawings, photos, or links later in the process.</p>
+            <div class="industry-grid">
+                <article class="industry" style="display:flex; flex-direction:column; gap:14px;">
+                    <div>
+                        <h2>Project Inquiry Form</h2>
+                        <p class="meta">Complete the form below with as much detail as you can. You can always attach drawings, photos, or links later.</p>
+                    </div>
 
-            <div style="margin-top:16px;">
-                <iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSeM9pKkef5agH9RmtLUNThUYVDr0pAwXdDYyXzsxMuaUKhU3g/viewform?embedded=true"
-                    width="100%"
-                    height="1100"
-                    frameborder="0"
-                    marginheight="0"
-                    marginwidth="0">
-                    Loading…
-                </iframe>
+                    <div style="margin-top: 12px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(148,163,184,0.3);">
+                        <iframe
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSeM9pKkef5agH9RmtLUNThUYVDr0pAwXdDYyXzsxMuaUKhU3g/viewform?embedded=true"
+                            width="100%"
+                            height="1100"
+                            frameborder="0"
+                            marginheight="0"
+                            marginwidth="0"
+                            style="display: block;">
+                            Loading…
+                        </iframe>
+                    </div>
+                </article>
             </div>
         </section>
 
+        <!-- Direct Contact Options -->
         <section class="section">
-            <h2>Prefer Email or a Call?</h2>
-            <p>If you’d rather start with a quick note or call, you can also reach me directly:</p>
-            <ul>
-                <li>Email: <a href="mailto:hello@immersa3d.com">hello@immersa3d.com</a></li>
-                <li>Parent company: <a href="https://droneservicescanadainc.com" target="_blank" rel="noopener">Drone Services Canada Inc.</a></li>
-            </ul>
+            <div class="industry-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <article class="industry">
+                    <h3 style="color: var(--color-accent-cyan); font-size: 18px; margin-bottom: 8px;">📧 Email</h3>
+                    <p style="font-size: 13px; color: var(--color-text-soft); margin-bottom: 12px;">Prefer to start with a quick note?</p>
+                    <a href="mailto:hello@immersa3d.com" style="color: var(--color-accent-cyan); font-size: 16px; font-weight: 600; text-decoration: none;">
+                        hello@immersa3d.com
+                    </a>
+                </article>
+
+                <article class="industry">
+                    <h3 style="color: var(--color-accent-cyan); font-size: 18px; margin-bottom: 8px;">🏢 Parent Company</h3>
+                    <p style="font-size: 13px; color: var(--color-text-soft); margin-bottom: 12px;">Immersa 3D is a service of</p>
+                    <a href="https://droneservicescanadainc.com" target="_blank" rel="noopener" style="color: var(--color-accent-cyan); font-size: 16px; font-weight: 600; text-decoration: none;">
+                        Drone Services Canada Inc. →
+                    </a>
+                </article>
+
+                <article class="industry">
+                    <h3 style="color: var(--color-accent-cyan); font-size: 18px; margin-bottom: 8px;">⏱️ Response Time</h3>
+                    <p style="font-size: 13px; color: var(--color-text-soft); margin-bottom: 12px;">Most inquiries answered within</p>
+                    <p style="color: var(--color-accent-cyan); font-size: 20px; font-weight: 700;">1 business day</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Service Area -->
+        <section class="section">
+            <div class="industry-grid">
+                <article class="industry">
+                    <h2>Service Area</h2>
+                    <p class="meta">Based in Ontario with nationwide and international project capabilities.</p>
+                    <ul>
+                        <li><strong>Primary hub:</strong> Greater Toronto &amp; Hamilton Area for fastest response and lowest travel costs.</li>
+                        <li><strong>Canada-wide:</strong> We travel across all provinces and territories for projects of any scale.</li>
+                        <li><strong>International:</strong> Available for projects worldwide—contact us to discuss logistics and timing.</li>
+                        <li><strong>Remote coordination:</strong> Planning, processing, and hosting managed remotely regardless of capture location.</li>
+                    </ul>
+                    <div class="pill-row">
+                        <span class="pill">🇨🇦 All of Canada</span>
+                        <span class="pill">🌍 International projects</span>
+                        <span class="pill">📍 GTA based</span>
+                    </div>
+                </article>
+            </div>
         </section>
     </div>
 </main>
@@ -115,7 +165,7 @@
         </div>
 
         <div class="powered-by">
-            Immersa 3D is a service of <a href="https://droneservicescanadainc.com">Drone Services Canada Inc.</a> — pricing subject to HST and final scope.
+            Immersa 3D is a service of <a href="https://droneservicescanadainc.com">Drone Services Canada Inc.</a> — 8+ years of reality capture expertise serving clients across Canada and internationally.
         </div>
     </div>
 </footer>
