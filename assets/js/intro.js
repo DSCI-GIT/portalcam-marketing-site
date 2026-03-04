@@ -15,6 +15,9 @@
   const bgB = document.getElementById("introBgB");
   const bgG = document.getElementById("introBgGrid");
 
+  // Detect if touch device
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
   // Hide header until intro is done
   header.classList.add("header-hidden");
 
@@ -25,9 +28,11 @@
   logoWrap.style.transform = "scale(1.5)";
   introImg.style.opacity = "1";
 
-  // Lock scroll until intro is gone
-  document.documentElement.style.overflow = "hidden";
-  document.body.style.overflow = "hidden";
+  // Only lock scroll on desktop (not on mobile)
+  if (!isTouchDevice) {
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+  }
 
   let progress = 0; // 0 = full intro, 1 = gone
   const MIN_PROGRESS = 0;
@@ -58,18 +63,21 @@
     // Show header now
     header.classList.remove("header-hidden");
 
-    // Unlock scroll
-    document.documentElement.style.overflow = "";
-    document.body.style.overflow = "";
+    // Unlock scroll (only if it was locked)
+    if (!isTouchDevice) {
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+    }
 
     window.removeEventListener("wheel", onWheel, wheelOptions);
     window.removeEventListener("keydown", onKeyDown);
-    window.removeEventListener("touchstart", onTouchStart, touchOptions);
+    introSection.removeEventListener("click", onTap);
     if (!prefersReduced) {
       window.removeEventListener("pointermove", onPointerMove);
     }
   }
 
+  // Desktop: scroll to dismiss
   function onWheel(e) {
     if (progress < MAX_PROGRESS) {
       e.preventDefault();
@@ -89,6 +97,7 @@
 
   const wheelOptions = { passive: false };
 
+  // Desktop: keyboard to dismiss
   function onKeyDown(e) {
     if (progress >= MAX_PROGRESS) return;
 
@@ -103,15 +112,14 @@
     }
   }
 
-  // Mobile: single tap anywhere dismisses intro
-  function onTouchStart() {
+  // Mobile: tap anywhere on intro to dismiss
+  function onTap(e) {
     if (progress >= MAX_PROGRESS) return;
     progress = MAX_PROGRESS;
     applyIntroState();
   }
 
-  const touchOptions = { passive: true };
-
+  // Optional: parallax while intro is visible (desktop only)
   function onPointerMove(e) {
     if (!bgA || !bgB || !bgG) return;
     if (progress >= MAX_PROGRESS) return;
@@ -124,11 +132,15 @@
     bgG.style.transform = `translate3d(${x * -8}px, ${y * 6}px, 0px) rotateX(${y * 1.5}deg) rotateY(${x * -2}deg)`;
   }
 
-  window.addEventListener("wheel", onWheel, wheelOptions);
-  window.addEventListener("keydown", onKeyDown);
-
-  // Add touch handler for phones/tablets
-  window.addEventListener("touchstart", onTouchStart, touchOptions);
+  // Attach listeners based on device type
+  if (isTouchDevice) {
+    // Mobile: just tap to dismiss
+    introSection.addEventListener("click", onTap);
+  } else {
+    // Desktop: scroll/keyboard to dismiss
+    window.addEventListener("wheel", onWheel, wheelOptions);
+    window.addEventListener("keydown", onKeyDown);
+  }
 
   if (!prefersReduced) {
     window.addEventListener("pointermove", onPointerMove);
