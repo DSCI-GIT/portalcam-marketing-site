@@ -2,384 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Immersa 3D | Photorealistic 3D Tours in 15 Minutes | Ontario Virtual Tours</title>
-    <meta name="description" content="15-minute capture. 24-48 hour delivery. Photorealistic 3D tours for real estate, tourism, and industrial training. Serving Greater Golden Horseshoe & Niagara.">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #1f2937;
-            background: #ffffff;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #0891b2;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: #4b5563;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover { color: #0891b2; }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .hero .subtitle {
-            font-size: 24px;
-            margin-bottom: 15px;
-            opacity: 0.95;
-        }
-        
-        .hero .speed-claim {
-            font-size: 20px;
-            margin-bottom: 30px;
-            background: rgba(255,255,255,0.2);
-            padding: 15px 30px;
-            border-radius: 8px;
-            display: inline-block;
-        }
-        
-        .cta-button {
-            background: #ffffff;
-            color: #0891b2;
-            padding: 15px 40px;
-            font-size: 18px;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        /* Trust Bar */
-        .trust-bar {
-            background: #f9fafb;
-            padding: 30px 0;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        
-        .trust-items {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        
-        .trust-item {
-            text-align: center;
-        }
-        
-        .trust-item .number {
-            font-size: 32px;
-            font-weight: 700;
-            color: #0891b2;
-        }
-        
-        .trust-item .label {
-            font-size: 14px;
-            color: #6b7280;
-            margin-top: 5px;
-        }
-        
-        /* Industry Section */
-        .industries {
-            padding: 80px 0;
-            background: #ffffff;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-header h2 {
-            font-size: 36px;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 15px;
-        }
-        
-        .section-header p {
-            font-size: 18px;
-            color: #6b7280;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .industry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        
-        .industry-card {
-            background: #f9fafb;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .industry-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .industry-card h3 {
-            font-size: 22px;
-            font-weight: 600;
-            color: #0891b2;
-            margin-bottom: 15px;
-        }
-        
-        .industry-card ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .industry-card li {
-            padding: 8px 0;
-            color: #4b5563;
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .industry-card li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #0891b2;
-            font-weight: 700;
-        }
-        
-        /* How It Works */
-        .how-it-works {
-            padding: 80px 0;
-            background: #f9fafb;
-        }
-        
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-        
-        .step {
-            text-align: center;
-        }
-        
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: #0891b2;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: 700;
-            margin: 0 auto 20px;
-        }
-        
-        .step h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .step .timing {
-            color: #0891b2;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        /* Upsell Section */
-        .upsell {
-            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-        
-        .upsell h2 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        
-        .upsell p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-button-secondary {
-            background: transparent;
-            color: white;
-            padding: 15px 40px;
-            font-size: 18px;
-            font-weight: 600;
-            border: 2px solid white;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s, color 0.3s;
-        }
-        
-        .cta-button-secondary:hover {
-            background: white;
-            color: #1e40af;
-        }
-        
-        /* Footer */
-        footer {
-            background: #1f2937;
-            color: #9ca3af;
-            padding: 40px 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-section h4 {
-            color: white;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section a {
-            color: #9ca3af;
-            text-decoration: none;
-            display: block;
-            padding: 5px 0;
-            transition: color 0.3s;
-        }
-        
-        .footer-section a:hover {
-            color: #0891b2;
-        }
-        
-        .powered-by {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #374151;
-            font-size: 14px;
-        }
-        
-        .powered-by a {
-            color: #0891b2;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
-            .hero .subtitle { font-size: 18px; }
-            .nav-links { display: none; }
-        }
-    </style>
+    <meta name="description" content="15-minute capture. 24-48 hour delivery. Photorealistic 3D tours for real estate, tourism, construction, and industrial training. Serving the Greater Toronto & Hamilton Area and clients across Ontario.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="/" class="logo">Immersa 3D</a>
-                <ul class="nav-links">
-                    <li><a href="pages/services-9.html">Services</a></li>
-                    <li><a href="pages/how-it-works-6.html">How It Works</a></li>
-                    <li><a href="pages/pricing-7.html">Pricing</a></li>
-                    <li><a href="pages/case-studies-3.html">Projects</a></li>
-                    <li><a href="pages/about-2.html">About</a></li>
-                    <li><a href="pages/contact-4.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Walk Through Your Space Once.<br>Share It Forever.</h1>
-            <p class="subtitle">Photorealistic 3D tours captured in 15 minutes</p>
-            <div class="speed-claim">
-                ⚡ 15-minute capture • 📦 24-48 hour delivery • 🌐 Instant sharing
+<!-- Full-screen background video (existing implementation, kept as-is) -->
+<div class="bg-video-wrapper">
+    <div class="bg-video-overlay"></div>
+    <iframe
+        class="bg-video-iframe"
+        src="https://www.youtube-nocookie.com/embed/vpjOaInpFJ4?autoplay=1&mute=1&loop=1&controls=0&playsinline=1&showinfo=0&playlist=vpjOaInpFJ4"
+        title="Immersa 3D Background"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+    ></iframe>
+</div>
+
+<header>
+    <div class="container">
+        <nav class="site-nav">
+            <a href="/" class="logo-wrap">
+                <img src="assets/img/brand/immersa3dlogo.png" alt="Immersa 3D" class="logo-img" id="navLogo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="pages/services-9.html">Services</a></li>
+                <li><a href="pages/how-it-works-6.html">How It Works</a></li>
+                <li><a href="pages/pricing-7.html">Pricing</a></li>
+                <li><a href="pages/case-studies-3.html">Projects</a></li>
+                <li><a href="pages/about-2.html">About</a></li>
+                <li><a href="pages/contact-4.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- INTRO SECTION: full viewport, scroll-controlled zoom -->
+    <section class="intro" id="intro">
+        <div class="intro-inner">
+            <div class="intro-layers">
+                <div class="intro-layer intro-layer--glow" id="introBgA"></div>
+                <div class="intro-layer intro-layer--grid" id="introBgB"></div>
+                <div class="intro-vignette" id="introBgGrid"></div>
             </div>
-            <a href="pages/contact-4.html" class="cta-button">Get a Quote</a>
+            <div class="intro-logo-wrap" id="introLogoWrap" data-parallax-layer>
+                <img src="assets/img/brand/immersa3dlogo.png" alt="Immersa 3D" class="intro-logo" id="introLogo">
+            </div>
         </div>
     </section>
 
-    <!-- Trust Bar -->
+    <!-- MAIN CONTENT STARTS AFTER INTRO -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <h1>Walk Through Your Space Once.<br>Share It Forever.</h1>
+            <p class="subtitle">Photorealistic 3D tours captured in 15 minutes.</p>
+            <div class="speed-claim">
+                <span>⚡ 15-minute capture</span>
+                <span>•</span>
+                <span>📦 24–48 hour delivery</span>
+                <span>•</span>
+                <span>🌐 Instant sharing</span>
+            </div>
+            <a href="pages/contact-4.html" class="cta-button">
+                Get a Quote
+            </a>
+        </div>
+    </section>
+
     <section class="trust-bar">
         <div class="container">
             <div class="trust-items">
@@ -392,166 +85,167 @@
                     <div class="label">To Capture 3,000 sq ft</div>
                 </div>
                 <div class="trust-item">
-                    <div class="number">24-48 Hours</div>
-                    <div class="label">Turnaround Time</div>
+                    <div class="number">24–48 Hours</div>
+                    <div class="label">Typical Turnaround</div>
                 </div>
                 <div class="trust-item">
                     <div class="number">RPAS Certified</div>
-                    <div class="label">Transport Canada Level 1</div>
+                    <div class="label">Transport Canada Level 1 Complex</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Industries Section -->
     <section class="industries">
         <div class="container">
             <div class="section-header">
-                <h2>Serving Greater Golden Horseshoe & Niagara</h2>
-                <p>Fast, immersive 3D tours for industries where speed and shareability matter</p>
+                <h2>Serving the GTA and Beyond</h2>
+                <p>Fast, immersive 3D tours for teams across the Greater Toronto &amp; Hamilton Area and throughout Ontario.</p>
             </div>
-            
+
             <div class="industry-grid">
-                <div class="industry-card">
+                <article class="industry-card">
                     <h3>🏠 Real Estate</h3>
                     <ul>
-                        <li>Virtual tours for listings</li>
-                        <li>Remote property showings</li>
-                        <li>Marketing & open houses</li>
-                        <li>Commercial leasing</li>
+                        <li>Virtual tours for listings.</li>
+                        <li>Remote property showings.</li>
+                        <li>Marketing &amp; open houses.</li>
+                        <li>Commercial leasing campaigns.</li>
                     </ul>
-                </div>
-                
-                <div class="industry-card">
-                    <h3>🍷 Tourism & Hospitality</h3>
+                </article>
+
+                <article class="industry-card">
+                    <h3>🍷 Tourism &amp; Hospitality</h3>
                     <ul>
-                        <li>Wineries & tasting rooms</li>
-                        <li>Golf course clubhouses</li>
-                        <li>Attractions & gardens</li>
-                        <li>Event venues</li>
+                        <li>Wineries &amp; tasting rooms.</li>
+                        <li>Golf course clubhouses.</li>
+                        <li>Attractions &amp; gardens.</li>
+                        <li>Event and wedding venues.</li>
                     </ul>
-                </div>
-                
-                <div class="industry-card">
+                </article>
+
+                <article class="industry-card">
                     <h3>🏗️ Construction</h3>
                     <ul>
-                        <li>Progress documentation</li>
-                        <li>Stakeholder updates</li>
-                        <li>RFI resolution</li>
-                        <li>As-built records</li>
+                        <li>Progress documentation.</li>
+                        <li>Stakeholder updates.</li>
+                        <li>RFI / issue context.</li>
+                        <li>As-built style records.</li>
                     </ul>
-                </div>
-                
-                <div class="industry-card">
+                </article>
+
+                <article class="industry-card">
                     <h3>🏭 Industrial Training</h3>
                     <ul>
-                        <li>Safety walkthroughs</li>
-                        <li>Worker onboarding</li>
-                        <li>Remote facility access</li>
-                        <li>Documentation & compliance</li>
+                        <li>Safety walkthroughs.</li>
+                        <li>Worker onboarding.</li>
+                        <li>Remote facility familiarization.</li>
+                        <li>Documentation &amp; compliance support.</li>
                     </ul>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
     <section class="how-it-works">
         <div class="container">
             <div class="section-header">
                 <h2>Fast Capture. Professional Results.</h2>
-                <p>PortalCam walk-through capture + Gaussian Splat processing + Splat Labs hosting</p>
+            <p>PortalCam walk-through capture + Gaussian splat processing + hosted 3D viewers.</p>
             </div>
-            
+
             <div class="process-steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Capture</h3>
-                    <div class="timing">~15 minutes for 3,000 sq ft</div>
-                    <p>Walk-through capture with PortalCam. No tripod stops. Natural walking speed. 4 cameras + LiDAR scanning.</p>
+                    <div class="timing">~15 minutes for ~3,000 sq ft</div>
+                    <p>Walk-through capture with PortalCam at natural walking speed—no tripod stops, 4 cameras plus LiDAR scanning.</p>
                 </div>
-                
+
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3>Process</h3>
-                    <div class="timing">24-48 hours</div>
-                    <p>Automated reconstruction in Lixel CyberColor Studio. Web-optimized Gaussian splats. Measurement-capable viewer.</p>
+                    <div class="timing">24–48 hours</div>
+                    <p>Automated reconstruction in Lixel CyberColor Studio with web-optimized Gaussian splats and measurement-capable views.</p>
                 </div>
-                
+
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>Deliver</h3>
                     <div class="timing">Instant sharing</div>
-                    <p>Cloud-hosted viewer via Splat Labs. Shareable link. Website embedding. VR-compatible. Optional access controls.</p>
+                    <p>Hosted viewer via Splat Labs with shareable links, website embeds, optional access control, and VR-compatible viewing.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Upsell to DSCI -->
     <section class="upsell">
         <div class="container">
             <h2>Need Survey-Grade Accuracy?</h2>
             <p>
-                Immersa 3D tours are perfect for marketing, training, and collaboration. 
-                When you need <strong>georeferenced data, CAD deliverables, or engineering-grade precision</strong>, 
-                upgrade to our drone LiDAR services with ±2cm accuracy.
+                Immersa 3D tours are ideal for marketing, training, and stakeholder communication.
+                When you need <strong>georeferenced data, CAD deliverables, or engineering-grade precision</strong>,
+                we connect your project to Drone Services Canada Inc.’s drone LiDAR workflows with ±2 cm accuracy.
             </p>
-            <a href="https://droneservicescanada.com" class="cta-button-secondary">Explore Drone LiDAR Services →</a>
+            <a href="https://droneservicescanadainc.com" class="cta-button-secondary">
+                Explore Drone LiDAR Services →
+            </a>
         </div>
     </section>
+</main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="pages/services-9.html#capture">Capture & Scan</a></li>
-                        <li><a href="pages/services-9.html#processing">Processing</a></li>
-                        <li><a href="pages/services-9.html#hosting">Hosting</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Industries</h4>
-                    <ul>
-                        <li><a href="pages/services-9.html#real-estate">Real Estate</a></li>
-                        <li><a href="pages/services-9.html#tourism">Tourism & Hospitality</a></li>
-                        <li><a href="pages/services-9.html#construction">Construction</a></li>
-                        <li><a href="pages/services-9.html#industrial">Industrial Training</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="pages/about-2.html">About</a></li>
-                        <li><a href="pages/how-it-works-6.html">How It Works</a></li>
-                        <li><a href="pages/case-studies-3.html">Case Studies</a></li>
-                        <li><a href="pages/faq-5.html">FAQ</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="mailto:hello@immersa3d.com">hello@immersa3d.com</a></li>
-                        <li><a href="pages/contact-4.html">Get a Quote</a></li>
-                        <li><a href="pages/pricing-7.html">Pricing</a></li>
-                    </ul>
-                </div>
+<footer>
+    <div class="footer-inner">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="pages/services-9.html#capture">Capture &amp; Scan</a></li>
+                    <li><a href="pages/services-9.html#processing">Processing</a></li>
+                    <li><a href="pages/services-9.html#hosting">Hosting</a></li>
+                </ul>
             </div>
-            
-            <div class="powered-by">
-                Immersa 3D is a service of <a href="https://droneservicescanada.com">Drone Services Canada Inc.</a> — 
-                8+ years of reality capture expertise serving Southern Ontario
-                <br><br>
-                <a href="pages/privacy-8.html">Privacy Policy</a> • 
-                <a href="pages/terms-10.html">Terms of Service</a>
+
+            <div class="footer-section">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="pages/services-9.html#real-estate">Real Estate</a></li>
+                    <li><a href="pages/services-9.html#tourism">Tourism &amp; Hospitality</a></li>
+                    <li><a href="pages/services-9.html#construction">Construction</a></li>
+                    <li><a href="pages/services-9.html#industrial">Industrial Training</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="pages/about-2.html">About</a></li>
+                    <li><a href="pages/how-it-works-6.html">How It Works</a></li>
+                    <li><a href="pages/case-studies-3.html">Case Studies</a></li>
+                    <li><a href="pages/faq-5.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:hello@immersa3d.com">hello@immersa3d.com</a></li>
+                    <li><a href="pages/contact-4.html">Get a Quote</a></li>
+                    <li><a href="pages/pricing-7.html">Pricing</a></li>
+                </ul>
             </div>
         </div>
-    </footer>
+
+        <div class="powered-by">
+            Immersa 3D is a service of <a href="https://droneservicescanadainc.com">Drone Services Canada Inc.</a> —
+            8+ years of reality capture expertise serving the Greater Toronto &amp; Hamilton Area and clients across Ontario.
+            <br><br>
+            <a href="pages/privacy-8.html">Privacy Policy</a> •
+            <a href="pages/terms-10.html">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
+<script src="assets/js/intro.js"></script>
 </body>
 </html>

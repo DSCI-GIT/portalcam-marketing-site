@@ -1,176 +1,123 @@
-<!doctype html>
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Contact | Immersa 3D</title>
-  <meta name="description" content="Contact Immersa 3D to scope an immersive 3D digital twin. Typical response within 1 business day." />  <link rel="icon" href="../assets/img/brand/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="../assets/img/brand/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="../assets/img/brand/favicon-512.png" />
-
-
-  <link rel="stylesheet" href="../assets/css/styles.css" />
+    <meta charset="UTF-8">
+    <title>Contact | Immersa 3D</title>
+    <meta name="description" content="Share details about your site and goals for an Immersa 3D tour. Get a tailored quote for capture, processing, and hosting.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="../index.html" aria-label="Immersa 3D home">
-        <img src="../assets/img/brand/immersa3dlogo.png" alt="Immersa 3D" style="height:28px;width:auto;display:block" loading="eager" />
-      </a>
-
-      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="burger" aria-hidden="true"></span>
-      </button>
-
-      <nav id="site-nav" class="site-nav" aria-label="Primary">
-        <a href="services.html">Services</a>
-        <a href="how-it-works.html">How it works</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="case-studies.html">Examples</a>
-        <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
-        <a class="btn btn-small" href="contact.html">Get a Quote</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="section page-hero">
-      <div class="container page-hero-grid">
-        <div>
-          <h1>Get a Quote</h1>
-          <p class="lead">
-            Tell us what you’re capturing and what you need delivered. We’ll reply with next steps.
-            
-          </p>
-
-          <div class="contact-mini">
-            <p class="muted"><strong>Email:</strong> <a href="mailto:hello@immersa3d.com">hello@immersa3d.com</a></p>
-            <p class="muted"><strong>Service area:</strong> Ontario, Canada (travel available; hosting worldwide)</p>
-          </div>
-        </div>
-
-        <figure class="media-frame">
-          <img src="../assets/img/placeholders/contact-hero.svg" alt="Placeholder: contact hero banner" width="1600" height="900" loading="lazy" />
-          <figcaption class="caption">Placeholder: contact banner / behind-the-scenes capture photo.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container contact-grid">
-        <div class="card">
-          <h2 class="h3">Project details</h2>
-
-          <form id="quoteForm" class="form" action="#" method="post" novalidate data-mailto="hello@immersa3d.com">
-            <p class="muted note-inline">
-              Optional: connect a form backend (e.g., Formspree) to receive submissions without email prompts. If left as-is, the form uses an email fallback.
-            </p>
-
-            <div class="field-row">
-              <div class="field">
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" autocomplete="name" required />
-                <small class="error" aria-live="polite"></small>
-              </div>
-
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required />
-                <small class="error" aria-live="polite"></small>
-              </div>
-            </div>
-
-            <div class="field-row">
-              <div class="field">
-                <label for="company">Company (optional)</label>
-                <input id="company" name="company" type="text" autocomplete="organization" />
-                <small class="error" aria-live="polite"></small>
-              </div>
-
-              <div class="field">
-                <label for="usecase">Use case</label>
-                <select id="usecase" name="usecase" required>
-                  <option value="">Select one…</option>
-                  <option>Digital twin for documentation</option>
-                  <option>Client-facing walkthrough / marketing</option>
-                  <option>Progress capture / periodic updates</option>
-                </select>
-                <small class="error" aria-live="polite"></small>
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="message">What do you need delivered?</label>
-              <textarea id="message" name="message" rows="6" required placeholder="Tell us about the space, timeline, and deliverables…"></textarea>
-              <small class="error" aria-live="polite"></small>
-            </div>
-
-            <div class="field checkbox">
-              <label>
-                <input id="consent" name="consent" type="checkbox" required />
-                I agree to be contacted about this inquiry.
-              </label>
-              <small class="error" aria-live="polite"></small>
-            </div>
-
-            <button class="btn" type="submit">Send</button>
-            <p id="formStatus" class="muted" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-
-        <aside class="stack">
-          <div class="card">
-            <h2 class="h3">Schedule a call</h2>
-            <p class="muted">Add a scheduling embed here when ready.</p>
-            <img src="../assets/img/placeholders/scheduling.svg" alt="Placeholder: scheduling embed" width="1600" height="900" loading="lazy" />
-          </div>
-
-          <div class="card">
-            <h2 class="h3">Service area</h2>
-            <p class="muted">Replace with your actual coverage area and travel policy (plan-based).</p>
-            <img src="../assets/img/placeholders/map.svg" alt="Placeholder: service area map" width="1600" height="900" loading="lazy" />
-          </div>
-        </aside>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>Immersa 3D</strong>
-        <p class="muted">High-fidelity 3D capture, Gaussian-splat processing, and hosted digital twins for teams that need clarity without site visits.</p>
-      </div>
-      <div>
-        <strong>Pages</strong>
-        <nav class="footer-nav" aria-label="Footer">
-          <a href="../index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="case-studies.html">Examples</a>
-          <a href="about.html">About</a>
-          <a href="faq.html">FAQ</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
+<header>
+    <div class="container">
+        <nav class="site-nav">
+            <a href="../index.html" class="logo-wrap">
+                <img src="../assets/img/brand/immersa3dlogo.png" alt="Immersa 3D" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="services-9.html">Services</a></li>
+                <li><a href="how-it-works-6.html">How It Works</a></li>
+                <li><a href="pricing-7.html">Pricing</a></li>
+                <li><a href="case-studies-3.html">Projects</a></li>
+                <li><a href="about-2.html">About</a></li>
+                <li><a href="contact-4.html">Contact</a></li>
+            </ul>
         </nav>
-      </div>
-      <div>
-        <strong>Contact</strong>
-        <p class="muted">Email: <a href="mailto:hello@immersa3d.com">hello@immersa3d.com</a></p>
-      </div>
     </div>
-    <div class="container footer-bottom">
-      <small class="muted">© <span id="year"></span> Immersa 3D. All rights reserved.</small>
-    </div>
-  </footer>
+</header>
 
-  <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/form.js"></script>
+<main class="inner">
+    <div class="container" style="
+        position: relative;
+        border-radius: 18px;
+        padding: 32px 24px 40px;
+        overflow: hidden;
+        background:
+            radial-gradient(circle at 0% 0%, rgba(0,212,255,0.20) 0, transparent 55%),
+            radial-gradient(circle at 100% 100%, rgba(124,58,237,0.20) 0, transparent 55%),
+            #020617;
+        border: 1px solid rgba(15,23,42,0.9);
+        box-shadow: 0 20px 60px rgba(15,23,42,0.9);
+    ">
+        <div class="page-header">
+            <h1>Contact</h1>
+            <p>Share a bit about your site, timeline, and what you’d like to capture. I’ll follow up with specific questions and a rough budget range before we book anything.</p>
+        </div>
+
+        <section class="section">
+            <h2>Project Inquiry Form</h2>
+            <p>Please complete the form below with as much detail as you comfortably can. You can always attach additional drawings, photos, or links later in the process.</p>
+
+            <div style="margin-top:16px;">
+                <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSeM9pKkef5agH9RmtLUNThUYVDr0pAwXdDYyXzsxMuaUKhU3g/viewform?embedded=true"
+                    width="100%"
+                    height="1100"
+                    frameborder="0"
+                    marginheight="0"
+                    marginwidth="0">
+                    Loading…
+                </iframe>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Prefer Email or a Call?</h2>
+            <p>If you’d rather start with a quick note or call, you can also reach me directly:</p>
+            <ul>
+                <li>Email: <a href="mailto:hello@immersa3d.com">hello@immersa3d.com</a></li>
+                <li>Parent company: <a href="https://droneservicescanadainc.com" target="_blank" rel="noopener">Drone Services Canada Inc.</a></li>
+            </ul>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services-9.html#capture">Capture &amp; Scan</a></li>
+                    <li><a href="services-9.html#processing">Processing</a></li>
+                    <li><a href="services-9.html#hosting">Hosting</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="services-9.html#real-estate">Real Estate</a></li>
+                    <li><a href="services-9.html#tourism">Tourism &amp; Hospitality</a></li>
+                    <li><a href="services-9.html#construction">Construction</a></li>
+                    <li><a href="services-9.html#industrial">Industrial Training</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about-2.html">About</a></li>
+                    <li><a href="how-it-works-6.html">How It Works</a></li>
+                    <li><a href="case-studies-3.html">Case Studies</a></li>
+                    <li><a href="faq-5.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:hello@immersa3d.com">hello@immersa3d.com</a></li>
+                    <li><a href="contact-4.html">Get a Quote</a></li>
+                    <li><a href="pricing-7.html">Pricing</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="powered-by">
+            Immersa 3D is a service of <a href="https://droneservicescanadainc.com">Drone Services Canada Inc.</a> — pricing subject to HST and final scope.
+        </div>
+    </div>
+</footer>
 </body>
 </html>
