@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Immersa 3D — Immersive 3D digital twins</title>
+  <meta name="description" content="Immersa 3D captures real spaces and delivers web-hosted, high-fidelity 3D digital twins (Gaussian splats) you can share or embed anywhere." />
+
+  <meta property="og:title" content="Immersa 3D — Immersive 3D digital twins" />
+  <meta property="og:description" content="Capture → Process → Host → Share. Immersive 3D digital twins in the browser." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="assets/img/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/img/brand/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="assets/img/brand/favicon-512.png" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <style>
+    /* =========================================================
+       FULL-PAGE BACKGROUND: video if available, gradient fallback
+       ========================================================= */
+    body { background:#0B0F1A; }
+
+    .site-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      overflow: hidden;
+      background: #0B0F1A;
+    }
+
+    /* Fallback gradient (always visible behind everything) */
+    .site-bg .bg-fallback{
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(900px 600px at 22% 18%, rgba(0,212,255,.18), transparent 60%),
+        radial-gradient(900px 600px at 82% 12%, rgba(124,58,237,.14), transparent 62%),
+        radial-gradient(1100px 800px at 55% 85%, rgba(0,212,255,.10), transparent 68%),
+        linear-gradient(#0B0F1A, #070A12);
+    }
+
+    /* Iframe starts hidden so YouTube error UI never shows */
+    .site-bg iframe{
+      position:absolute;
+      top:50%;
+      left:50%;
+      width: 120vw;
+      height: 120vh;
+      transform: translate(-50%, -50%);
+      border:0;
+      opacity: 0;              /* hidden by default */
+      visibility: hidden;      /* prevents “Watch on YouTube” overlay flashing */
+      filter: saturate(1.05) contrast(1.05);
+    }
+
+    .site-bg.is-playing iframe{
+      opacity: .92;            /* CHANGED (was .78) */
+      visibility: visible;
+    }
+
+    .site-bg-overlay{
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(1200px 900px at 30% 20%, rgba(0,0,0,.12), rgba(0,0,0,.70) 72%), /* CHANGED */
+        linear-gradient(rgba(11,15,26,.48), rgba(11,15,26,.74));                        /* CHANGED */
+    }
+
+    @media (max-width: 900px){
+      .site-bg iframe{ width: 180vw; height: 150vh; }
+      .site-bg.is-playing iframe{ opacity:.82; }  /* CHANGED (was .68) */
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .site-bg iframe{ display:none; }
+    }
+
+    /* =========================================================
+       SERVICES GRID (fixes “broken” card layout)
+       ========================================================= */
+    .card-grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+    }
+    @media (max-width: 960px){
+      .card-grid{ grid-template-columns: 1fr; }
+    }
+    .card img{ width:100%; height:auto; display:block; border-radius:14px; }
+
+    /* =========================================================
+       INTRO OVERLAY (kept)
+       ========================================================= */
+    #introOverlay{
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #0B0F1A;
+      opacity: 1;
+    }
+    #introStage{
+      position:absolute;
+      inset:0;
+      perspective: 1200px;
+      transform-style: preserve-3d;
+      pointer-events:none;
+    }
+    #introBgA, #introBgB, #introBgGrid{
+      position:absolute;
+      inset:-20%;
+      will-change: transform, opacity;
+      transform-style: preserve-3d;
+    }
+    #introBgA{
+      background: radial-gradient(900px 600px at 30% 25%, rgba(0,212,255,.22), transparent 60%);
+      opacity:.9;
+    }
+    #introBgB{
+      background: radial-gradient(900px 600px at 80% 15%, rgba(124,58,237,.18), transparent 62%);
+      opacity:.8;
+    }
+    #introBgGrid{
+      inset:0;
+      opacity:.55;
+      background:
+        radial-gradient(1200px 800px at 15% 10%, rgba(0,212,255,.14), transparent 55%),
+        radial-gradient(900px 700px at 90% 0%, rgba(124,58,237,.10), transparent 55%),
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: auto, auto, 48px 48px, 48px 48px;
+      background-position: center, center, center, center;
+    }
+    #introVignette{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background: radial-gradient(1200px 900px at 50% 45%, rgba(0,0,0,0) 0%, rgba(0,0,0,.55) 72%, rgba(0,0,0,.78) 100%);
+    }
+    #introLogoWrap{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform: translate(-50%, -50%) translateZ(0px) rotateX(0deg) rotateY(-4deg) scale(1.55);
+      transform-origin: 50% 50%;
+      transform-style: preserve-3d;
+      will-change: transform, opacity, filter;
+      filter: drop-shadow(0 22px 70px rgba(0,0,0,.60));
+      text-align:center;
+      user-select:none;
+    }
+    #introLogo{
+      width: min(620px, 78vw);
+      height:auto;
+      display:block;
+      margin:0 auto;
+    }
+    #introHint{
+      margin-top: 18px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgba(255,255,255,.78);
+      opacity: .95;
+    }
+    #introClickArea{
+      position:absolute;
+      inset:0;
+      cursor:pointer;
+    }
+    .intro-idle #introLogoWrap{
+      animation: introFloat 2.6s ease-in-out infinite;
+    }
+    @keyframes introFloat{
+      0%   { transform: translate(-50%, -50%) translateZ(0px) rotateX(0deg) rotateY(-4deg) scale(1.55); }
+      50%  { transform: translate(-50%, -52%) translateZ(30px) rotateX(2deg) rotateY(4deg) scale(1.58); }
+      100% { transform: translate(-50%, -50%) translateZ(0px) rotateX(0deg) rotateY(-4deg) scale(1.55); }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .intro-idle #introLogoWrap{ animation:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- BACKGROUND (video optional) -->
+  <div class="site-bg" id="siteBg" aria-hidden="true">
+    <div class="bg-fallback"></div>
+
+    <!-- NOTE: This specific YouTube video likely blocks embedding (error 153).
+         We keep it here, but it will stay hidden unless it actually plays. -->
+    <iframe
+      id="bgIframe"
+      title="Immersa 3D background video"
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      src="https://www.youtube-nocookie.com/embed/vpjOaInpFJ4?autoplay=1&mute=1&controls=0&playsinline=1&loop=1&playlist=vpjOaInpFJ4&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&fs=0"
+    ></iframe>
+  </div>
+  <div class="site-bg-overlay" aria-hidden="true"></div>
+
+  <!-- INTRO OVERLAY -->
+  <div id="introOverlay" aria-hidden="true">
+    <div id="introStage" aria-hidden="true">
+      <div id="introBgA"></div>
+      <div id="introBgB"></div>
+      <div id="introBgGrid"></div>
+      <div id="introVignette"></div>
+    </div>
+
+    <div id="introLogoWrap" aria-hidden="false">
+      <img id="introLogo" src="assets/img/brand/immersa3dlogo.png" alt="Immersa 3D" />
+      <div id="introHint">Click to enter</div>
+    </div>
+    <div id="introClickArea" aria-label="Enter site"></div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Immersa 3D home">
+        <img id="navLogo" src="assets/img/brand/immersa3dlogo.png" alt="Immersa 3D"
+             style="height:28px;width:auto;display:block" loading="eager" />
+      </a>
+
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span aria-hidden="true">☰</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="pages/services.html">Services</a>
+        <a href="pages/how-it-works.html">How it works</a>
+        <a href="pages/pricing.html">Pricing</a>
+        <a href="pages/case-studies.html">Examples</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/faq.html">FAQ</a>
+        <a class="btn btn-small" href="pages/contact.html">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Immersive 3D capture + hosting</p>
+          <h1>Turn real spaces into shareable 3D digital twins</h1>
+          <p class="lead">
+            On-site capture, Gaussian-splat processing, and secure cloud hosting—so your team can explore, measure, and collaborate remotely.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn" href="pages/contact.html">Get a Quote</a>
+            <a class="btn btn-ghost" href="pages/case-studies.html">See Examples</a>
+          </div>
+
+          <ul class="hero-bullets">
+            <li>Web-optimized Gaussian splats with fast loading and crisp detail</li>
+            <li>Hosting, embeds, and access controls included—no fragile file handoffs</li>
+            <li>Repeatable workflow with clear scope, capture plan, and turnaround timelines</li>
+          </ul>
+        </div>
+
+        <!-- Removed the old “Deliverables…” note entirely -->
+        <div class="hero-media" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- LOGO STRIP -->
+    <section class="section section-alt">
+      <div class="container">
+        <p class="muted center">
+          Built for construction, commercial real estate, hospitality, and industrial teams who need reliable documentation.
+        </p>
+        <img class="img-wide" src="assets/img/placeholders/logo-strip.svg"
+             alt="Industry strip" width="1600" height="220" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services</h2>
+          <p class="muted">Capture, processing, and hosting—delivered as a single, end-to-end service.</p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <img src="assets/img/placeholders/service-capture.svg" alt="Capture &amp; Scan" width="800" height="800" loading="lazy" />
+            <h3>Capture &amp; Scan</h3>
+            <p>Fast on-site capture for interiors and exteriors with a plan tailored to your site and safety constraints.</p>
+            <a class="text-link" href="pages/services.html">Learn more →</a>
+          </article>
+
+          <article class="card">
+            <img src="assets/img/placeholders/service-process.svg" alt="Gaussian Splat Processing" width="800" height="800" loading="lazy" />
+            <h3>Gaussian Splat Processing</h3>
+            <p>Clean, optimize, and package your capture into high-fidelity, web-ready Gaussian splats.</p>
+            <a class="text-link" href="pages/services.html">Learn more →</a>
+          </article>
+
+          <article class="card">
+            <img src="assets/img/placeholders/service-host.svg" alt="Hosting &amp; Share" width="800" height="800" loading="lazy" />
+            <h3>Hosting, Embed &amp; Share</h3>
+            <p>Secure hosted viewer with share links, website embeds, and optional access controls.</p>
+            <a class="text-link" href="pages/services.html">Learn more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-band">
+      <div class="container cta-inner">
+        <div>
+          <h2>Ready to plan a capture?</h2>
+          <p class="muted">Tell us what you’re trying to achieve and we’ll recommend a package.</p>
+        </div>
+        <a class="btn" href="pages/contact.html">Get a Quote</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <small class="muted">© <span id="year"></span> Immersa 3D. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="assets/js/intro.js"></script>
+  <script src="assets/js/site-bg.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
