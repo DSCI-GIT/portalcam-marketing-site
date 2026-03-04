@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
+
+<!-- Full-screen background video -->
+<div class="bg-video-wrapper">
+    <div class="bg-video-overlay"></div>
+    <iframe
+        class="bg-video-iframe"
+        src="https://www.youtube-nocookie.com/embed/vpjOaInpFJ4?autoplay=1&mute=1&loop=1&controls=0&playsinline=1&showinfo=0&playlist=vpjOaInpFJ4"
+        title="Immersa 3D Background"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+    ></iframe>
+</div>
+
 <header>
     <div class="container">
         <nav class="site-nav">
@@ -50,7 +64,10 @@
                     <p class="note">Good fit for residential listings, small commercial spaces, and simple walkthroughs.</p>
                 </article>
 
-                <article class="plan">
+                <article class="plan" style="border: 2px solid var(--color-accent-cyan); position: relative;">
+                    <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--color-accent-cyan); color: #00111a; padding: 4px 16px; border-radius: 999px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">
+                        Most Popular
+                    </div>
                     <h2>Branded Experience</h2>
                     <p class="tagline">Best for client-facing walkthroughs and team collaboration.</p>
                     <p class="price">$3,500+</p>
@@ -81,40 +98,170 @@
             </div>
         </section>
 
-        <!-- Typical examples -->
+        <!-- Typical Examples by Use Case -->
         <section class="section">
-            <h2>Typical Examples by Use Case</h2>
-            <p>Actual pricing depends on size, complexity, and add-ons, but most projects land in these bands:</p>
-            <ul>
-                <li><strong>Residential real estate:</strong> $699–$1,750 for most listings, up to $2,500+ for luxury with drone add-ons.</li>
-                <li><strong>Commercial real estate:</strong> $1,500–$5,000 for typical floor plates or small multi-tenant spaces.</li>
-                <li><strong>Tourism &amp; hospitality:</strong> $5,000–$25,000 for wineries, clubhouses, or attractions depending on scope.</li>
-                <li><strong>Industrial training &amp; construction:</strong> $5,000–$35,000+ for complex facilities or multi-phase programs.</li>
-            </ul>
+            <div class="section-header">
+                <h2>Typical Examples by Use Case</h2>
+                <p>Actual pricing depends on size, complexity, and add-ons, but most projects land in these bands:</p>
+            </div>
+
+            <div class="industry-grid">
+                <!-- Residential Real Estate -->
+                <article class="industry" style="display:flex; flex-direction:column; gap:14px;">
+                    <div>
+                        <h3 style="color: var(--color-accent-cyan); font-size: 18px; margin-bottom: 6px;">🏠 Residential Real Estate</h3>
+                        <p class="meta">Listings and luxury homes</p>
+                    </div>
+
+                    <div style="background: rgba(0, 212, 255, 0.08); border: 1px solid rgba(0, 212, 255, 0.25); border-radius: 10px; padding: 16px 14px;">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                            <span style="font-size: 13px; color: var(--color-text-muted);">Standard listings</span>
+                            <span style="font-size: 20px; font-weight: 700; color: var(--color-accent-cyan);">$699–$1,750</span>
+                        </div>
+                        <div style="height: 8px; background: rgba(15, 23, 42, 0.6); border-radius: 999px; overflow: hidden; margin-bottom: 12px;">
+                            <div style="width: 35%; height: 100%; background: linear-gradient(90deg, var(--color-accent-cyan), rgba(0, 212, 255, 0.7)); border-radius: 999px;"></div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                            <span style="font-size: 13px; color: var(--color-text-muted);">Luxury + drone</span>
+                            <span style="font-size: 20px; font-weight: 700; color: var(--color-accent-cyan);">$2,500+</span>
+                        </div>
+                        <div style="height: 8px; background: rgba(15, 23, 42, 0.6); border-radius: 999px; overflow: hidden;">
+                            <div style="width: 50%; height: 100%; background: linear-gradient(90deg, var(--color-accent-cyan), rgba(0, 212, 255, 0.7)); border-radius: 999px;"></div>
+                        </div>
+                    </div>
+
+                    <div class="pill-row">
+                        <span class="pill">✓ Fast turnaround</span>
+                        <span class="pill">✓ MLS ready</span>
+                    </div>
+                </article>
+
+                <!-- Commercial Real Estate -->
+                <article class="industry" style="display:flex; flex-direction:column; gap:14px; border: 2px solid rgba(0, 212, 255, 0.4);">
+                    <div style="position: relative;">
+                        <div style="position: absolute; top: -28px; left: 50%; transform: translateX(-50%); background: var(--color-accent-cyan); color: #00111a; padding: 3px 12px; border-radius: 999px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap;">
+                            Best Value
+                        </div>
+                        <h3 style="color: var(--color-accent-cyan); font-size: 18px; margin-bottom: 6px;">🏢 Commercial Real Estate</h3>
+                        <p class="meta">Floor plates and multi-tenant spaces</p>
+                    </div>
+
+                    <div style="background: rgba(0, 212, 255, 0.08); border: 1px solid rgba(0, 212, 255, 0.25); border-radius: 10px; padding: 16px 14px;">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                            <span style="font-size: 13px; color: var(--color-text-muted);">Typical projects</span>
+                            <span style="font-size: 20px; font-weight: 700; color: var(--color-accent-cyan);">$1,500–$5,000</span>
+                        </div>
+                        <div style="height: 8px; background: rgba(15, 23, 42, 0.6); border-radius: 999px; overflow: hidden;">
+                            <div style="width: 70%; height: 100%; background: linear-gradient(90deg, var(--color-accent-cyan), rgba(0, 212, 255, 0.7)); border-radius: 999px;"></div>
+                        </div>
+                    </div>
+
+                    <div class="pill-row">
+                        <span class="pill">✓ Leasing ready</span>
+                        <span class="pill">✓ ROI proven</span>
+                    </div>
+                </article>
+
+                <!-- Tourism & Hospitality -->
+                <article class="industry" style="display:flex; flex-direction:column; gap:14px;">
+                    <div>
+                        <h3 style="color: var(--color-accent-cyan); font-size: 18px; margin-bottom: 6px;">🍷 Tourism &amp; Hospitality</h3>
+                        <p class="meta">Wineries, clubhouses, attractions</p>
+                    </div>
+
+                    <div style="background: rgba(0, 212, 255, 0.08); border: 1px solid rgba(0, 212, 255, 0.25); border-radius: 10px; padding: 16px 14px;">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                            <span style="font-size: 13px; color: var(--color-text-muted);">Typical scope</span>
+                            <span style="font-size: 20px; font-weight: 700; color: var(--color-accent-cyan);">$5,000–$25,000</span>
+                        </div>
+                        <div style="height: 8px; background: rgba(15, 23, 42, 0.6); border-radius: 999px; overflow: hidden;">
+                            <div style="width: 85%; height: 100%; background: linear-gradient(90deg, var(--color-accent-cyan), rgba(0, 212, 255, 0.7)); border-radius: 999px;"></div>
+                        </div>
+                    </div>
+
+                    <div class="pill-row">
+                        <span class="pill">✓ Guided tours</span>
+                        <span class="pill">✓ Branding</span>
+                    </div>
+                </article>
+
+                <!-- Industrial Training & Construction -->
+                <article class="industry" style="display:flex; flex-direction:column; gap:14px;">
+                    <div>
+                        <h3 style="color: var(--color-accent-cyan); font-size: 18px; margin-bottom: 6px;">🏭 Industrial &amp; Construction</h3>
+                        <p class="meta">Complex facilities and multi-phase programs</p>
+                    </div>
+
+                    <div style="background: rgba(0, 212, 255, 0.08); border: 1px solid rgba(0, 212, 255, 0.25); border-radius: 10px; padding: 16px 14px;">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                            <span style="font-size: 13px; color: var(--color-text-muted);">Enterprise scope</span>
+                            <span style="font-size: 20px; font-weight: 700; color: var(--color-accent-cyan);">$5,000–$35,000+</span>
+                        </div>
+                        <div style="height: 8px; background: rgba(15, 23, 42, 0.6); border-radius: 999px; overflow: hidden;">
+                            <div style="width: 95%; height: 100%; background: linear-gradient(90deg, var(--color-accent-cyan), rgba(0, 212, 255, 0.7)); border-radius: 999px;"></div>
+                        </div>
+                    </div>
+
+                    <div class="pill-row">
+                        <span class="pill">✓ Progress tracking</span>
+                        <span class="pill">✓ Training support</span>
+                    </div>
+                </article>
+            </div>
         </section>
 
         <!-- Hosting -->
         <section class="section">
-            <h2>Hosting Renewal Pricing</h2>
-            <p>Capture is a one-time service. Hosting renewals keep your tour live and accessible to your team and stakeholders.</p>
-            <ul>
-                <li><strong>Basic Hosting:</strong> from $25/month or $249/year per tour for most single-site projects.</li>
-                <li><strong>Pro Hosting:</strong> for tourism and hospitality sites that need higher support or analytics (custom quoted).</li>
-                <li><strong>Enterprise / white-label:</strong> for multi-location operators with custom branding or portal integration.</li>
-            </ul>
-            <p>We can bundle the first renewal period into your initial project or bill it separately as a subscription.</p>
+            <div class="industry-grid">
+                <article class="industry" style="display:flex; flex-direction:column; gap:14px;">
+                    <div>
+                        <h2>Hosting Renewal Pricing</h2>
+                        <p class="meta">Keep your tour live and accessible after initial capture.</p>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                        <div style="background: rgba(0, 212, 255, 0.06); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 10px; padding: 16px 14px;">
+                            <h3 style="font-size: 15px; margin-bottom: 6px; color: var(--color-text-primary);">Basic Hosting</h3>
+                            <p style="font-size: 24px; font-weight: 700; color: var(--color-accent-cyan); margin-bottom: 4px;">$25/mo</p>
+                            <p style="font-size: 13px; color: var(--color-text-soft); margin-bottom: 8px;">or $249/year per tour</p>
+                            <p style="font-size: 12px; color: var(--color-text-muted);">Most single-site projects</p>
+                        </div>
+
+                        <div style="background: rgba(0, 212, 255, 0.06); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 10px; padding: 16px 14px;">
+                            <h3 style="font-size: 15px; margin-bottom: 6px; color: var(--color-text-primary);">Pro Hosting</h3>
+                            <p style="font-size: 24px; font-weight: 700; color: var(--color-accent-cyan); margin-bottom: 4px;">Custom</p>
+                            <p style="font-size: 13px; color: var(--color-text-soft); margin-bottom: 8px;">Quoted per project</p>
+                            <p style="font-size: 12px; color: var(--color-text-muted);">Analytics & priority support</p>
+                        </div>
+
+                        <div style="background: rgba(0, 212, 255, 0.06); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 10px; padding: 16px 14px;">
+                            <h3 style="font-size: 15px; margin-bottom: 6px; color: var(--color-text-primary);">Enterprise</h3>
+                            <p style="font-size: 24px; font-weight: 700; color: var(--color-accent-cyan); margin-bottom: 4px;">Custom</p>
+                            <p style="font-size: 13px; color: var(--color-text-soft); margin-bottom: 8px;">Multi-location</p>
+                            <p style="font-size: 12px; color: var(--color-text-muted);">White-label & portal integration</p>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 13px; color: var(--color-text-soft); margin-top: 8px;">We can bundle the first renewal period into your initial project or bill it separately as a subscription.</p>
+                </article>
+            </div>
         </section>
 
         <!-- Add-ons -->
         <section class="section">
-            <h2>Add-ons &amp; Upgrades</h2>
-            <p>Optional enhancements to tailor your digital twin to marketing, training, or engineering workflows:</p>
-            <ul>
-                <li>Additional annotations, custom branding, and guided experiences.</li>
-                <li>Teaser video exports for social media and campaigns.</li>
-                <li>Drone exterior capture or integration with existing LiDAR / survey data.</li>
-                <li>Higher-security hosting or private access setups for sensitive sites.</li>
-            </ul>
+            <div class="industry-grid">
+                <article class="industry">
+                    <h2>Add-ons &amp; Upgrades</h2>
+                    <p class="meta">Optional enhancements to tailor your digital twin to marketing, training, or engineering workflows.</p>
+                    <ul>
+                        <li>Additional annotations, custom branding, and guided experiences.</li>
+                        <li>Teaser video exports for social media and campaigns.</li>
+                        <li>Drone exterior capture or integration with existing LiDAR / survey data.</li>
+                        <li>Higher-security hosting or private access setups for sensitive sites.</li>
+                    </ul>
+                </article>
+            </div>
         </section>
 
         <div class="cta-row">
