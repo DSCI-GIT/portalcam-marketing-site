@@ -17,7 +17,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="services-9.html">Services</a></li>
-                <li><a href="how-it-works-6.html">How It Works</a></li>
+                <li><a href="compare.html">Compare</a></li>
                 <li><a href="pricing-7.html">Pricing</a></li>
                 <li><a href="case-studies-3.html">Projects</a></li>
                 <li><a href="about-2.html">About</a></li>
@@ -31,21 +31,6 @@
     <section class="services-hero">
         <h1>Services</h1>
     </section>
-
-    <div class="services-toc-wrap">
-        <nav class="services-toc" aria-label="Services navigation">
-            <a href="#real-estate" data-target="real-estate">Real Estate</a>
-            <a href="#tourism-hospitality" data-target="tourism-hospitality">Tourism &amp; Hospitality</a>
-            <a href="#construction-development" data-target="construction-development">Construction &amp; Development</a>
-            <a href="#industrial-training" data-target="industrial-training">Industrial Training</a>
-            <a href="#film-production" data-target="film-production">Film Production</a>
-            <a href="#content-creation" data-target="content-creation">Content Creation</a>
-            <a href="#personal-memory" data-target="personal-memory">Personal Memory</a>
-            <a href="#capture-scan" data-target="capture-scan">Capture &amp; Scan</a>
-            <a href="#processing-deliverables" data-target="processing-deliverables">Processing &amp; Deliverables</a>
-            <a href="#hosting-enhancements" data-target="hosting-enhancements">Hosting, Sharing &amp; Enhancements</a>
-        </nav>
-    </div>
 
     <div class="services-stack" id="servicesStack">
         <section class="service-block" id="real-estate" data-section="real-estate">
@@ -85,7 +70,7 @@
         <section class="service-block" id="tourism-hospitality" data-section="tourism-hospitality">
             <div class="service-block__head">
                 <div class="service-block__eyebrow">Tourism &amp; Hospitality</div>
-                <div class="service-block__title">Let Guests Experience the Venue Before They Arrive</div>
+                <div class="service-block__title">Golf Courses, Clubhouses, and Venues — Seen Before Arrival</div>
             </div>
 
             <div class="service-block__grid">
@@ -445,7 +430,7 @@
                 <h4>Company</h4>
                 <ul>
                     <li><a href="about-2.html">About</a></li>
-                    <li><a href="how-it-works-6.html">How It Works</a></li>
+                    <li><a href="compare.html">Compare</a></li>
                     <li><a href="case-studies-3.html">Projects</a></li>
                     <li><a href="faq-5.html">FAQ</a></li>
                 </ul>
@@ -471,23 +456,14 @@
 (() => {
     const stack = document.getElementById("servicesStack");
     const sections = Array.from(document.querySelectorAll(".service-block[data-section]"));
-    const tocLinks = Array.from(document.querySelectorAll(".services-toc a[data-target]"));
 
-    if (!stack || !sections.length || !tocLinks.length) return;
-
-    const linkMap = new Map(
-        tocLinks.map(link => [link.dataset.target, link])
-    );
+    if (!stack || !sections.length) return;
 
     function setActive(id) {
         stack.classList.add("has-focus");
 
         sections.forEach(section => {
             section.classList.toggle("is-active", section.dataset.section === id);
-        });
-
-        tocLinks.forEach(link => {
-            link.classList.toggle("is-active", link.dataset.target === id);
         });
     }
 
@@ -507,18 +483,6 @@
     });
 
     sections.forEach(section => observer.observe(section));
-
-    tocLinks.forEach(link => {
-        link.addEventListener("click", (e) => {
-            const id = link.dataset.target;
-            const target = document.getElementById(id);
-            if (!target) return;
-
-            e.preventDefault();
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
-            setActive(id);
-        });
-    });
 
     setActive(sections[0].dataset.section);
 })();
