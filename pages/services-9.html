@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Services | Immersa 3D</title>
-    <meta name="description" content="Immersive 3D services for real estate, tourism, construction, and industrial training. Fast PortalCam capture, Gaussian splat processing, and secure hosted viewers across Ontario.">
+    <title>Services | SplatCap 3D</title>
+    <meta name="description" content="Immersive 3D capture, Gaussian splat processing, hosted digital twins, and application-focused services for real estate, tourism, construction, industrial training, film production, content creation, and personal memory.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/services.css">
 </head>
 <body>
 <header>
     <div class="container">
         <nav class="site-nav">
             <a href="../index.html" class="logo-wrap">
-                <img src="../assets/img/brand/immersa3dlogo.png" alt="Immersa 3D" class="logo-img">
+                <img src="../assets/img/brand/immersa3dlogo.png" alt="SplatCap 3D" class="logo-img">
             </a>
             <ul class="nav-links">
                 <li><a href="services-9.html">Services</a></li>
@@ -26,272 +27,394 @@
     </div>
 </header>
 
-<main class="inner">
-    <div class="container">
-        <div class="page-header">
-            <h1>Services</h1>
-            <p>End-to-end immersive digital twins for sites across Ontario—capture, processing, and hosting—so your team and clients can understand a space without being on site.</p>
-        </div>
+<main class="services-page">
+    <section class="services-hero">
+        <h1>Services</h1>
+    </section>
 
-        <!-- Capture & Scan -->
-        <section id="capture" class="section">
-            <div class="industry-grid">
-                <article class="industry" style="display:flex; flex-direction:column; gap:14px;">
-                    <div>
-                        <h2>Capture &amp; Scan</h2>
-                        <p class="meta">Fast PortalCam walk-through capture of interiors, exteriors, and active sites.</p>
-                    </div>
-
-                    <div style="display:grid; grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:18px; align-items:stretch;">
-                        <div>
-                            <p>We plan coverage, access, and safety, then use PortalCam walk-through capture to document your space at natural walking speed—without hours of tripod moves or site disruption.</p>
-                            <ul>
-                                <li>Capture plan with clear zones, routes, and lighting/access notes.</li>
-                                <li>On-site capture session for interiors, exteriors, or hybrid spaces.</li>
-                                <li>Quick coverage review before we leave so there are no surprises later.</li>
-                            </ul>
-                            <div class="pill-row">
-                                <span class="pill">PortalCam multi-camera rig</span>
-                                <span class="pill">4 sensors + LiDAR</span>
-                                <span class="pill">~15 minutes per 3,000 sq ft</span>
-                            </div>
-                        </div>
-
-                        <div style="
-                            border-radius:14px;
-                            border:1px solid rgba(148,163,184,0.45);
-                            background:
-                                radial-gradient(circle at 0% 0%, rgba(0,212,255,0.18) 0, transparent 55%),
-                                radial-gradient(circle at 100% 100%, rgba(124,58,237,0.18) 0, transparent 55%),
-                                #020617;
-                            display:flex;
-                            align-items:center;
-                            justify-content:center;
-                            text-align:center;
-                            padding:14px;
-                            font-size:12px;
-                            color:rgba(226,232,240,0.84);
-                        ">
-                            <div>
-                                <div style="height:150px; border-radius:10px; border:1px dashed rgba(148,163,184,0.7); margin-bottom:10px; display:flex; align-items:center; justify-content:center; font-size:11px; color:rgba(148,163,184,0.9);">
-                                    Capture photo or short walkthrough clip placeholder
-                                </div>
-                                <p style="margin:0;">Drop in a PortalCam rig shot or short capture clip here to show how we move through a site.</p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Processing -->
-        <section id="processing" class="section">
-            <div class="industry-grid">
-                <article class="industry" style="display:flex; flex-direction:column; gap:14px;">
-                    <div>
-                        <h2>Gaussian Splat Processing</h2>
-                        <p class="meta">Turn raw capture into a photoreal, navigable 3D environment.</p>
-                    </div>
-
-                    <div style="display:grid; grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:18px; align-items:stretch;">
-                        <div>
-                            <p>We reconstruct your space in Lixel CyberColor Studio and generate web-ready Gaussian splat models tuned for fast, reliable viewing in modern browsers on desktop and mobile.</p>
-                            <ul>
-                                <li>Web-optimized Gaussian splat model with smooth navigation.</li>
-                                <li>Optional snapshots and a short teaser video exported from the model.</li>
-                                <li>Exports (PLY, SPLAT, KSPLAT) available for archiving or integration.</li>
-                            </ul>
-                            <div class="pill-row">
-                                <span class="pill">Gaussian splat rendering</span>
-                                <span class="pill">Lixel CyberColor Studio</span>
-                                <span class="pill">Web &amp; mobile optimized</span>
-                            </div>
-                        </div>
-
-                        <div style="
-                            border-radius:14px;
-                            border:1px solid rgba(148,163,184,0.45);
-                            background:
-                                radial-gradient(circle at 0% 0%, rgba(0,212,255,0.18) 0, transparent 55%),
-                                radial-gradient(circle at 100% 100%, rgba(124,58,237,0.18) 0, transparent 55%),
-                                #020617;
-                            display:flex;
-                            align-items:center;
-                            justify-content:center;
-                            text-align:center;
-                            padding:14px;
-                            font-size:12px;
-                            color:rgba(226,232,240,0.84);
-                        ">
-                            <div>
-                                <div style="height:150px; border-radius:10px; border:1px dashed rgba(148,163,184,0.7); margin-bottom:10px; display:flex; align-items:center; justify-content:center; font-size:11px; color:rgba(148,163,184,0.9);">
-                                    Processed 3D viewer or before/after clip placeholder
-                                </div>
-                                <p style="margin:0;">Use a screen recording or still of the 3D viewer here to show how the space looks once processed.</p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Hosting -->
-        <section id="hosting" class="section">
-            <div class="industry-grid">
-                <article class="industry" style="display:flex; flex-direction:column; gap:14px;">
-                    <div>
-                        <h2>Secure Hosting &amp; Sharing</h2>
-                        <p class="meta">Keep your digital twin live, secure, and easy to share.</p>
-                    </div>
-
-                    <div style="display:grid; grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:18px; align-items:stretch;">
-                        <div>
-                            <p>We host your model on a professional viewer so your team and stakeholders can explore the space from a single secure link—without managing servers, logins, or software updates.</p>
-                            <ul>
-                                <li>Interactive viewer with intuitive navigation and basic measurement.</li>
-                                <li>Shareable links and embed options for websites and internal portals.</li>
-                                <li>Optional access controls and private projects for sensitive sites.</li>
-                                <li>VR-compatible modes where supported by the viewer.</li>
-                            </ul>
-                            <div class="pill-row">
-                                <span class="pill">Hosted 3D viewer</span>
-                                <span class="pill">Share links &amp; embeds</span>
-                                <span class="pill">Access control options</span>
-                            </div>
-                        </div>
-
-                        <div style="
-                            border-radius:14px;
-                            border:1px solid rgba(148,163,184,0.45);
-                            background:
-                                radial-gradient(circle at 0% 0%, rgba(0,212,255,0.18) 0, transparent 55%),
-                                radial-gradient(circle at 100% 100%, rgba(124,58,237,0.18) 0, transparent 55%),
-                                #020617;
-                            display:flex;
-                            align-items:center;
-                            justify-content:center;
-                            text-align:center;
-                            padding:14px;
-                            font-size:12px;
-                            color:rgba(226,232,240,0.84);
-                        ">
-                            <div>
-                                <div style="height:150px; border-radius:10px; border:1px dashed rgba(148,163,184,0.7); margin-bottom:10px; display:flex; align-items:center; justify-content:center; font-size:11px; color:rgba(148,163,184,0.9);">
-                                    Viewer UI or embed example placeholder
-                                </div>
-                                <p style="margin:0;">Show a screenshot of your hosted viewer or an embed inside a client portal here.</p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Add-ons -->
-        <section id="add-ons" class="section">
-            <div class="industry-grid">
-                <article class="industry" style="display:flex; flex-direction:column; gap:14px;">
-                    <div>
-                        <h2>Add-ons &amp; Enhancements</h2>
-                        <p class="meta">Shape the experience around marketing, training, or project communication.</p>
-                    </div>
-
-                    <div style="display:grid; grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:18px; align-items:stretch;">
-                        <div>
-                            <p>Layer on guidance, branding, and updates so your digital twin does real work—whether that is selling a space, training new staff, or keeping stakeholders aligned.</p>
-                            <ul>
-                                <li>Annotations, guided paths, and highlighted views for key areas.</li>
-                                <li>Custom branding and white-label embed options.</li>
-                                <li>Progress updates with monthly or quarterly re-capture.</li>
-                                <li>Hybrid twins combining interior PortalCam capture with drone data.</li>
-                            </ul>
-                            <div class="pill-row">
-                                <span class="pill">Guided experiences</span>
-                                <span class="pill">Branding &amp; white-label</span>
-                                <span class="pill">Progress updates</span>
-                            </div>
-                        </div>
-
-                        <div style="
-                            border-radius:14px;
-                            border:1px solid rgba(148,163,184,0.45);
-                            background:
-                                radial-gradient(circle at 0% 0%, rgba(0,212,255,0.18) 0, transparent 55%),
-                                radial-gradient(circle at 100% 100%, rgba(124,58,237,0.18) 0, transparent 55%),
-                                #020617;
-                            display:flex;
-                            align-items:center;
-                            justify-content:center;
-                            text-align:center;
-                            padding:14px;
-                            font-size:12px;
-                            color:rgba(226,232,240,0.84);
-                        ">
-                            <div>
-                                <div style="height:150px; border-radius:10px; border:1px dashed rgba(148,163,184,0.7); margin-bottom:10px; display:flex; align-items:center; justify-content:center; font-size:11px; color:rgba(148,163,184,0.9);">
-                                    Annotations / guided tour overlay placeholder
-                                </div>
-                                <p style="margin:0;">Use this space for a screenshot showing annotations, hotspots, or a guided tour timeline.</p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Industries -->
-        <section id="industries" class="section">
-            <h2>Industries We Serve</h2>
-            <p class="meta">Focused on spaces where remote understanding and buy-in really matter.</p>
-            <div class="industry-grid">
-                <article class="industry">
-                    <h3>Real Estate</h3>
-                    <p class="meta">Make listings and leasing easier to understand remotely.</p>
-                    <ul>
-                        <li>Listing-ready walkthroughs for residential and commercial properties.</li>
-                        <li>Remote tours for out-of-town buyers and tenants.</li>
-                        <li>Amenity and common-area tours for multi-unit buildings.</li>
-                    </ul>
-                </article>
-
-                <article id="tourism" class="industry">
-                    <h3>Tourism &amp; Hospitality</h3>
-                    <p class="meta">Let visitors explore before they arrive.</p>
-                    <ul>
-                        <li>Digital twins of wineries, tasting rooms, and clubhouses.</li>
-                        <li>Attraction and garden walkthroughs for campaigns and events.</li>
-                        <li>Venue tours to support booking and planning.</li>
-                    </ul>
-                </article>
-
-                <article id="construction" class="industry">
-                    <h3>Construction &amp; Development</h3>
-                    <p class="meta">Reduce re-walks and improve project communication.</p>
-                    <ul>
-                        <li>Progress documentation for owners and stakeholders.</li>
-                        <li>Context for RFIs and coordination issues.</li>
-                        <li>As-built style snapshots of key phases or areas.</li>
-                    </ul>
-                </article>
-
-                <article id="industrial" class="industry">
-                    <h3>Industrial Training</h3>
-                    <p class="meta">Standardize how people learn your site.</p>
-                    <ul>
-                        <li>Safety walkthroughs for new staff and contractors.</li>
-                        <li>Remote familiarization of complex corridors and equipment areas.</li>
-                        <li>Reusable training content tied to real-world layouts.</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <div class="cta-row">
-            <a href="contact-4.html" class="cta-button">
-                Tell us about your site and goals →
-            </a>
-        </div>
+    <div class="services-toc-wrap">
+        <nav class="services-toc" aria-label="Services navigation">
+            <a href="#real-estate" data-target="real-estate">Real Estate</a>
+            <a href="#tourism-hospitality" data-target="tourism-hospitality">Tourism &amp; Hospitality</a>
+            <a href="#construction-development" data-target="construction-development">Construction &amp; Development</a>
+            <a href="#industrial-training" data-target="industrial-training">Industrial Training</a>
+            <a href="#film-production" data-target="film-production">Film Production</a>
+            <a href="#content-creation" data-target="content-creation">Content Creation</a>
+            <a href="#personal-memory" data-target="personal-memory">Personal Memory</a>
+            <a href="#capture-scan" data-target="capture-scan">Capture &amp; Scan</a>
+            <a href="#processing-deliverables" data-target="processing-deliverables">Processing &amp; Deliverables</a>
+            <a href="#hosting-enhancements" data-target="hosting-enhancements">Hosting, Sharing &amp; Enhancements</a>
+        </nav>
     </div>
+
+    <div class="services-stack" id="servicesStack">
+        <section class="service-block" id="real-estate" data-section="real-estate">
+            <div class="service-block__head">
+                <div class="service-block__eyebrow">Real Estate</div>
+                <div class="service-block__title">Let Buyers Understand the Space Before They Visit</div>
+            </div>
+
+            <div class="service-block__grid">
+                <div class="service-block__media">
+                    <div class="service-block__media-placeholder">Real estate tour image or embedded viewer still</div>
+                </div>
+
+                <div>
+                    <div class="service-block__points">
+                        <div class="service-point">
+                            <h3>True-to-Life Property Tours</h3>
+                            <p>Let buyers, tenants, and stakeholders move naturally through a listing or commercial space with a better sense of layout, flow, and scale than photos alone can provide.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Fast Property Capture</h3>
+                            <p>Digitize a property quickly at walking speed, reducing on-site disruption while creating a complete spatial record of the environment.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Simple Link Sharing</h3>
+                            <p>Share tours by direct link or embed them into listing pages, presentations, and marketing material for easy viewing across desktop and mobile devices.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Better Qualified Buyers</h3>
+                            <p>When people understand a space more clearly before arriving, conversations become more productive and decisions can happen with greater confidence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-block" id="tourism-hospitality" data-section="tourism-hospitality">
+            <div class="service-block__head">
+                <div class="service-block__eyebrow">Tourism &amp; Hospitality</div>
+                <div class="service-block__title">Let Guests Experience the Venue Before They Arrive</div>
+            </div>
+
+            <div class="service-block__grid">
+                <div class="service-block__media">
+                    <div class="service-block__media-placeholder">Winery, venue, clubhouse, or attraction image placeholder</div>
+                </div>
+
+                <div>
+                    <div class="service-block__points">
+                        <div class="service-point">
+                            <h3>Show the Full Guest Experience</h3>
+                            <p>Give visitors a realistic walkthrough of tasting rooms, event spaces, attractions, clubhouses, and other hospitality environments before they book or visit.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Support Venue Booking</h3>
+                            <p>Help couples, planners, guests, and groups understand room layouts, circulation, and atmosphere before making decisions.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Reusable Marketing Content</h3>
+                            <p>One captured venue can support your website, digital campaigns, social content, and internal sales presentations.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Reduce Visitor Uncertainty</h3>
+                            <p>A navigable 3D environment answers many of the practical questions that flat photos or short videos leave unresolved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-block" id="construction-development" data-section="construction-development">
+            <div class="service-block__head">
+                <div class="service-block__eyebrow">Construction &amp; Development</div>
+                <div class="service-block__title">Keep Stakeholders Aligned Without Another Site Walk</div>
+            </div>
+
+            <div class="service-block__grid">
+                <div class="service-block__media">
+                    <div class="service-block__media-placeholder">Active site walkthrough or progress capture placeholder</div>
+                </div>
+
+                <div>
+                    <div class="service-block__points">
+                        <div class="service-point">
+                            <h3>Remote Project Context</h3>
+                            <p>Give owners, consultants, and project teams the ability to review site conditions remotely without coordinating another physical visit.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Clear Progress Documentation</h3>
+                            <p>Capture major phases and changing conditions as navigable 3D records instead of relying on disconnected folders of site photos.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Better Coordination and Review</h3>
+                            <p>RFIs, field issues, stakeholder reviews, and planning discussions become easier when everyone can see the actual environment.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Reduce Re-Walks</h3>
+                            <p>One strong capture can reduce repeated visits for clarification, review, and internal project communication.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-block" id="industrial-training" data-section="industrial-training">
+            <div class="service-block__head">
+                <div class="service-block__eyebrow">Industrial Training</div>
+                <div class="service-block__title">Train People Using the Real Space They Will Actually Work In</div>
+            </div>
+
+            <div class="service-block__grid">
+                <div class="service-block__media">
+                    <div class="service-block__media-placeholder">Industrial facility, corridor, or training environment placeholder</div>
+                </div>
+
+                <div>
+                    <div class="service-block__points">
+                        <div class="service-point">
+                            <h3>Site Familiarization Before Arrival</h3>
+                            <p>Help workers, contractors, and visitors understand layouts, circulation paths, and major work areas before entering the live environment.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Support Safety and Orientation</h3>
+                            <p>Use the real facility as the basis for walkthroughs, onboarding, and operational awareness.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Reusable Training Environments</h3>
+                            <p>A single capture becomes a repeatable training resource that can be revisited across teams and over time.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Consistent Knowledge Transfer</h3>
+                            <p>Standardize how site context is communicated so new personnel receive the same visual reference every time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-block" id="film-production" data-section="film-production">
+            <div class="service-block__head">
+                <div class="service-block__eyebrow">Film Production</div>
+                <div class="service-block__title">Reduce Location Scouting and Improve Pre-Production Decisions</div>
+            </div>
+
+            <div class="service-block__grid">
+                <div class="service-block__media">
+                    <div class="service-block__media-placeholder">Film location, scouting capture, or previs placeholder</div>
+                </div>
+
+                <div>
+                    <div class="service-block__points">
+                        <div class="service-point">
+                            <h3>Remote Location Review</h3>
+                            <p>Let directors, producers, and department leads evaluate a location remotely without repeated scouting trips.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Faster Pre-Visualization</h3>
+                            <p>Review blocking, movement, sightlines, and environmental constraints using a captured version of the real location.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Useful for Virtual Production Workflows</h3>
+                            <p>Spatially accurate environments can support planning, previs, and downstream creative workflows.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Lower Time and Travel Costs</h3>
+                            <p>One strong capture can reduce travel overhead, repeated location visits, and coordination delays between departments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-block" id="content-creation" data-section="content-creation">
+            <div class="service-block__head">
+                <div class="service-block__eyebrow">Content Creation</div>
+                <div class="service-block__title">Build Immersive Content from Real-World Spaces</div>
+            </div>
+
+            <div class="service-block__grid">
+                <div class="service-block__media">
+                    <div class="service-block__media-placeholder">Interactive world, branded experience, or 3D content placeholder</div>
+                </div>
+
+                <div>
+                    <div class="service-block__points">
+                        <div class="service-point">
+                            <h3>Fast World Capture</h3>
+                            <p>Real spaces can be digitized quickly and turned into visually rich interactive content.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Flexible Output Potential</h3>
+                            <p>Captured environments can support web presentation, branded media, product storytelling, and future technical integrations.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Audience Engagement</h3>
+                            <p>Interactive spaces create a more exploratory and memorable experience than conventional media alone.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Reusable Location Assets</h3>
+                            <p>Once captured, a location becomes a durable digital asset that can be revisited and repurposed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-block" id="personal-memory" data-section="personal-memory">
+            <div class="service-block__head">
+                <div class="service-block__eyebrow">Personal Memory</div>
+                <div class="service-block__title">Preserve Places, Events, and Environments with Full Spatial Context</div>
+            </div>
+
+            <div class="service-block__grid">
+                <div class="service-block__media">
+                    <div class="service-block__media-placeholder">Family archive, event space, or meaningful place placeholder</div>
+                </div>
+
+                <div>
+                    <div class="service-block__points">
+                        <div class="service-point">
+                            <h3>Relive a Place More Completely</h3>
+                            <p>Revisit a home, venue, room, or event space as an environment rather than as a flat image gallery.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Capture More Than Objects</h3>
+                            <p>Preserve layout, lighting, atmosphere, and arrangement along with the visible details in the scene.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Create Lasting Family Archives</h3>
+                            <p>Important spaces and personal landmarks can be retained as navigable records for future viewing and sharing.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Future-Friendly Digital Preservation</h3>
+                            <p>A structured 3D archive is more adaptable to future display and viewing technologies than a folder of still images alone.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-block" id="capture-scan" data-section="capture-scan">
+            <div class="service-block__head">
+                <div class="service-block__eyebrow">Capture &amp; Scan</div>
+                <div class="service-block__title">Fast, Efficient Spatial Capture</div>
+            </div>
+
+            <div class="service-block__grid">
+                <div class="service-block__media">
+                    <div class="service-block__media-placeholder">PortalCam rig, operator, or walk-through capture placeholder</div>
+                </div>
+
+                <div>
+                    <div class="service-block__points">
+                        <div class="service-point">
+                            <h3>PortalCam Walk-Through Capture</h3>
+                            <p>Capture interiors, hybrid spaces, and navigable environments at natural walking speed without lengthy tripod-based workflows.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Coverage Planning</h3>
+                            <p>Routes, access, lighting, and capture priorities are planned before scanning begins so the final model serves the project goal.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Efficient On-Site Sessions</h3>
+                            <p>The workflow is built to minimize disruption while still producing complete spatial coverage.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Coverage Review Before Departure</h3>
+                            <p>We confirm the capture is complete on site so there are fewer surprises during processing.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-block__pills">
+                        <span class="pill">PortalCam multi-camera rig</span>
+                        <span class="pill">4 sensors + LiDAR</span>
+                        <span class="pill">Walking-speed capture</span>
+                        <span class="pill">Interior and hybrid spaces</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-block" id="processing-deliverables" data-section="processing-deliverables">
+            <div class="service-block__head">
+                <div class="service-block__eyebrow">Processing &amp; Deliverables</div>
+                <div class="service-block__title">Turn Raw Capture into a Navigable 3D Environment</div>
+            </div>
+
+            <div class="service-block__grid">
+                <div class="service-block__media">
+                    <div class="service-block__media-placeholder">Processed model, viewer still, or before/after placeholder</div>
+                </div>
+
+                <div>
+                    <div class="service-block__points">
+                        <div class="service-point">
+                            <h3>Gaussian Splat Processing</h3>
+                            <p>Raw capture is reconstructed into a photorealistic, web-ready 3D environment designed for clear navigation and visual fidelity.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Viewer-Ready Optimization</h3>
+                            <p>Models are tuned for responsive viewing across modern browsers and devices.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Export Options</h3>
+                            <p>Depending on project requirements, deliverables can include hosted models, snapshots, teaser visuals, and archive exports.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Clear Visual Presentation</h3>
+                            <p>The final output is built to help clients understand and share a space, not merely store raw data.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-block__pills">
+                        <span class="pill">Gaussian splat rendering</span>
+                        <span class="pill">Lixel CyberColor Studio</span>
+                        <span class="pill">Web and mobile optimized</span>
+                        <span class="pill">Viewer-ready delivery</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-block" id="hosting-enhancements" data-section="hosting-enhancements">
+            <div class="service-block__head">
+                <div class="service-block__eyebrow">Hosting, Sharing &amp; Enhancements</div>
+                <div class="service-block__title">Make the Digital Twin Useful After Delivery</div>
+            </div>
+
+            <div class="service-block__grid">
+                <div class="service-block__media">
+                    <div class="service-block__media-placeholder">Hosted viewer, embed example, or annotation interface placeholder</div>
+                </div>
+
+                <div>
+                    <div class="service-block__points">
+                        <div class="service-point">
+                            <h3>Hosted 3D Viewing</h3>
+                            <p>Deliver the project through a professional viewer that supports intuitive navigation and remote access.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Simple Sharing and Embedding</h3>
+                            <p>Tours can be delivered as direct links or embedded into websites, internal portals, and presentations.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Access Control Options</h3>
+                            <p>Private projects and restricted-access environments can be managed where required.</p>
+                        </div>
+                        <div class="service-point">
+                            <h3>Enhancements and Extensions</h3>
+                            <p>Add annotations, guided views, branding, periodic updates, or hybrid workflows that combine interior capture with broader reality capture deliverables.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-block__pills">
+                        <span class="pill">Hosted viewer</span>
+                        <span class="pill">Share links and embeds</span>
+                        <span class="pill">Access control options</span>
+                        <span class="pill">Add-ons and updates</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="services-cta">
+        <h2>Tell Us About Your Space, Audience, and Goals</h2>
+        <p>Whether the priority is property marketing, venue sales, stakeholder communication, training, content creation, or long-term archival preservation, we can help determine the right capture and delivery approach for the project.</p>
+        <a href="contact-4.html" class="cta-button">Get a Quote →</a>
+    </section>
 </main>
 
 <footer>
@@ -300,20 +423,21 @@
             <div class="footer-section">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="services-9.html#capture">Capture &amp; Scan</a></li>
-                    <li><a href="services-9.html#processing">Processing</a></li>
-                    <li><a href="services-9.html#hosting">Hosting</a></li>
+                    <li><a href="services-9.html#real-estate">Real Estate</a></li>
+                    <li><a href="services-9.html#construction-development">Construction &amp; Development</a></li>
+                    <li><a href="services-9.html#capture-scan">Capture &amp; Scan</a></li>
+                    <li><a href="services-9.html#hosting-enhancements">Hosting &amp; Sharing</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h4>Industries</h4>
+                <h4>Applications</h4>
                 <ul>
-                    <li><a href="services-9.html#industries">Overview</a></li>
-                    <li><a href="services-9.html#real-estate">Real Estate</a></li>
-                    <li><a href="services-9.html#tourism">Tourism &amp; Hospitality</a></li>
-                    <li><a href="services-9.html#construction">Construction</a></li>
-                    <li><a href="services-9.html#industrial">Industrial Training</a></li>
+                    <li><a href="services-9.html#tourism-hospitality">Tourism &amp; Hospitality</a></li>
+                    <li><a href="services-9.html#industrial-training">Industrial Training</a></li>
+                    <li><a href="services-9.html#film-production">Film Production</a></li>
+                    <li><a href="services-9.html#content-creation">Content Creation</a></li>
+                    <li><a href="services-9.html#personal-memory">Personal Memory</a></li>
                 </ul>
             </div>
 
@@ -322,7 +446,7 @@
                 <ul>
                     <li><a href="about-2.html">About</a></li>
                     <li><a href="how-it-works-6.html">How It Works</a></li>
-                    <li><a href="case-studies-3.html">Case Studies</a></li>
+                    <li><a href="case-studies-3.html">Projects</a></li>
                     <li><a href="faq-5.html">FAQ</a></li>
                 </ul>
             </div>
@@ -330,7 +454,7 @@
             <div class="footer-section">
                 <h4>Contact</h4>
                 <ul>
-                    <li><a href="mailto:hello@immersa3d.com">hello@immersa3d.com</a></li>
+                    <li><a href="mailto:hello@splatcap3d.com">hello@splatcap3d.com</a></li>
                     <li><a href="contact-4.html">Get a Quote</a></li>
                     <li><a href="pricing-7.html">Pricing</a></li>
                 </ul>
@@ -338,9 +462,66 @@
         </div>
 
         <div class="powered-by">
-            Immersa 3D is a service of <a href="https://droneservicescanadainc.com">Drone Services Canada Inc.</a> — 8+ years of reality capture expertise serving the Greater Toronto &amp; Hamilton Area and clients across Ontario.
+            SplatCap 3D is a service of <a href="https://droneservicescanadainc.com">Drone Services Canada Inc.</a> — 8+ years of reality capture expertise serving the Greater Toronto &amp; Hamilton Area and clients across Ontario.
         </div>
     </div>
 </footer>
+
+<script>
+(() => {
+    const stack = document.getElementById("servicesStack");
+    const sections = Array.from(document.querySelectorAll(".service-block[data-section]"));
+    const tocLinks = Array.from(document.querySelectorAll(".services-toc a[data-target]"));
+
+    if (!stack || !sections.length || !tocLinks.length) return;
+
+    const linkMap = new Map(
+        tocLinks.map(link => [link.dataset.target, link])
+    );
+
+    function setActive(id) {
+        stack.classList.add("has-focus");
+
+        sections.forEach(section => {
+            section.classList.toggle("is-active", section.dataset.section === id);
+        });
+
+        tocLinks.forEach(link => {
+            link.classList.toggle("is-active", link.dataset.target === id);
+        });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        const visible = entries
+            .filter(entry => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (!visible.length) return;
+
+        const active = visible[0].target.dataset.section;
+        if (active) setActive(active);
+    }, {
+        root: null,
+        rootMargin: "-20% 0px -45% 0px",
+        threshold: [0.2, 0.35, 0.5, 0.65]
+    });
+
+    sections.forEach(section => observer.observe(section));
+
+    tocLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            const id = link.dataset.target;
+            const target = document.getElementById(id);
+            if (!target) return;
+
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            setActive(id);
+        });
+    });
+
+    setActive(sections[0].dataset.section);
+})();
+</script>
 </body>
 </html>
