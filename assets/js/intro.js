@@ -15,17 +15,16 @@
   const bgB = document.getElementById("introBgB");
   const bgG = document.getElementById("introBgGrid");
 
-  // Detect if mobile device
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+  const isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+    window.innerWidth < 768;
 
-  // MOBILE: Skip intro entirely, show header immediately
   if (isMobile) {
     introSection.style.display = "none";
     header.classList.remove("header-hidden");
     return;
   }
 
-  // DESKTOP: Run full intro with scroll control
   header.classList.add("header-hidden");
 
   introSection.style.display = "flex";
@@ -34,7 +33,6 @@
   logoWrap.style.transform = "scale(1.5)";
   introImg.style.opacity = "1";
 
-  // Lock scroll until intro is gone
   document.documentElement.style.overflow = "hidden";
   document.body.style.overflow = "hidden";
 
