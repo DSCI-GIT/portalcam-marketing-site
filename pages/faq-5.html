@@ -1,129 +1,538 @@
-<!doctype html>
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <title>FAQ | SplatCap 3D</title>
+    <meta name="description" content="Frequently asked questions about SplatCap 3D capture, Gaussian splat processing, hosting, pricing, timelines, deliverables, and project fit.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/img/brand/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/img/brand/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="../assets/img/brand/favicon-512.png">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/services.css">
+    <style>
+        :root {
+            --accent: #0ea5e9;
+            --accent-soft: rgba(14, 165, 233, 0.10);
+            --accent-border: rgba(14, 165, 233, 0.22);
+            --accent-strong: #0284c7;
+        }
 
-  <title>FAQ | Immersa 3D</title>
-  <meta name="description" content="Frequently asked questions about Immersa 3D capture, Gaussian splats, hosting, deliverables, timelines, and data handling." />  <link rel="icon" href="../assets/img/brand/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="../assets/img/brand/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="../assets/img/brand/favicon-512.png" />
+        .faq-intro {
+            max-width: 860px;
+            margin-bottom: 10px;
+            color: #475569;
+            font-size: 16px;
+            line-height: 1.65;
+        }
 
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 24px;
+        }
 
-  <link rel="stylesheet" href="../assets/css/styles.css" />
+        .faq-stack {
+            display: grid;
+            gap: 16px;
+        }
+
+        .faq-item {
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 22px;
+            background:
+                radial-gradient(circle at top left, var(--accent-soft), transparent 28%),
+                linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.94)),
+                #ffffff;
+            box-shadow: 0 16px 34px rgba(15, 23, 42, 0.06);
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 22px 40px rgba(15, 23, 42, 0.09);
+            border-color: var(--accent-border);
+        }
+
+        .faq-item[open] {
+            border-color: var(--accent-border);
+            box-shadow: 0 24px 48px rgba(15, 23, 42, 0.10);
+        }
+
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 22px 24px;
+            font-size: 18px;
+            line-height: 1.4;
+            font-weight: 700;
+            color: #1a1a1b;
+            position: relative;
+            transition: color 0.2s ease, background 0.25s ease, padding-left 0.25s ease;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 16px;
+            bottom: 16px;
+            width: 4px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+            opacity: 0;
+            transform: scaleY(0.6);
+            transform-origin: center;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            position: absolute;
+            right: 22px;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            font-size: 26px;
+            font-weight: 400;
+            color: #64748b;
+            transition: transform 0.22s ease, color 0.22s ease;
+        }
+
+        .faq-item:hover summary {
+            color: #111827;
+            padding-left: 28px;
+        }
+
+        .faq-item:hover summary::before,
+        .faq-item[open] summary::before {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+
+        .faq-item[open] summary {
+            color: var(--accent-strong);
+            background: linear-gradient(180deg, var(--accent-soft), rgba(14,165,233,0.04));
+            padding-left: 28px;
+        }
+
+        .faq-item[open] summary::after {
+            content: "+";
+            color: var(--accent-strong);
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px 24px;
+            color: #475569;
+            font-size: 15px;
+            line-height: 1.7;
+            animation: faqFadeIn 0.28s ease;
+        }
+
+        .faq-answer p {
+            margin: 0;
+        }
+
+        .faq-side {
+            display: grid;
+            gap: 18px;
+            align-content: start;
+        }
+
+        .faq-card {
+            padding: 24px;
+            border-radius: 24px;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            background:
+                radial-gradient(circle at top left, var(--accent-soft), transparent 30%),
+                rgba(255, 255, 255, 0.96);
+            box-shadow: 0 16px 34px rgba(15, 23, 42, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .faq-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 22px 40px rgba(15, 23, 42, 0.09);
+            border-color: var(--accent-border);
+        }
+
+        .faq-card h3 {
+            margin: 0 0 10px;
+            font-size: 20px;
+            line-height: 1.2;
+            color: #1a1a1b;
+        }
+
+        .faq-card p {
+            margin: 0;
+            color: #475569;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .faq-card ul {
+            margin: 12px 0 0;
+            padding-left: 18px;
+            color: #475569;
+        }
+
+        .faq-card li {
+            margin-bottom: 8px;
+            line-height: 1.55;
+        }
+
+        .faq-card--highlight {
+            position: relative;
+            overflow: hidden;
+            border-color: var(--accent-border);
+            background:
+                radial-gradient(circle at top left, rgba(14,165,233,0.16), transparent 32%),
+                linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95)),
+                #ffffff;
+        }
+
+        .faq-card--highlight::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 0%, rgba(14,165,233,0.10) 45%, transparent 65%);
+            transform: translateX(-120%);
+            animation: faqShimmer 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .faq-card--highlight h3 {
+            color: var(--accent-strong);
+        }
+
+        .faq-chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .faq-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-size: 13px;
+            line-height: 1;
+            font-weight: 600;
+            color: var(--accent-strong);
+            background: rgba(14,165,233,0.10);
+            border: 1px solid rgba(14,165,233,0.18);
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .faq-chip:hover {
+            transform: translateY(-1px);
+            background: rgba(14,165,233,0.16);
+            border-color: rgba(14,165,233,0.28);
+        }
+
+        @keyframes faqFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes faqShimmer {
+            0% {
+                transform: translateX(-120%);
+            }
+            55% {
+                transform: translateX(120%);
+            }
+            100% {
+                transform: translateX(120%);
+            }
+        }
+
+        @media (max-width: 980px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .faq-item,
+            .faq-card,
+            .faq-item summary,
+            .faq-item summary::before,
+            .faq-item summary::after,
+            .faq-chip,
+            .faq-answer {
+                transition: none;
+                animation: none;
+            }
+
+            .faq-card--highlight::after {
+                animation: none;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="../index.html" aria-label="Immersa 3D home">
-        <img src="../assets/img/brand/splatcap-logo-horizontal.svg" alt="Immersa 3D" style="height:28px;width:auto;display:block" loading="eager" />
-      </a>
-
-      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="burger" aria-hidden="true"></span>
-      </button>
-
-      <nav id="site-nav" class="site-nav" aria-label="Primary">
-        <a href="services.html">Services</a>
-        <a href="how-it-works.html">How it works</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="case-studies.html">Examples</a>
-        <a href="about.html">About</a>
-        <a aria-current="page" href="faq.html">FAQ</a>
-        <a class="btn btn-small" href="contact.html">Get a Quote</a>
-      </nav>
+<header>
+    <div class="container">
+        <nav class="site-nav">
+            <a href="../index.html" class="logo-wrap logo-lockup">
+                <img src="../assets/img/brand/splatcap-logo-mark.svg" alt="SplatCap 3D" class="logo-img" id="navLogo">
+                <div class="logo-text">
+                    <img src="../assets/img/brand/splatcap-logo-wordmark.svg" alt="SplatCap 3D" class="logo-wordmark">
+                    <span class="logo-text__tag">Photoreal 3D capture</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="services-9.html">Services</a></li>
+                <li><a href="compare.html">Compare</a></li>
+                <li><a href="pricing-7.html">Pricing</a></li>
+                <li><a href="case-studies-3.html">Projects</a></li>
+                <li><a href="about-2.html">About</a></li>
+                <li><a href="contact-4.html">Contact</a></li>
+            </ul>
+        </nav>
     </div>
-  </header>
+</header>
 
-  <main id="main">
-    <section class="section page-hero">
-      <div class="container">
-        <h1>FAQ</h1>
-        <p class="lead">
-          Replace these questions with the FAQ section from your business plan.
-          
-        </p>
-      </div>
+<main class="services-page">
+    <section class="services-hero">
+        <h1>Frequently Asked Questions</h1>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="faq">
-          <details class="faq-item">
-            <summary>What is a Gaussian splat model?</summary>
-            <p>Gaussian splats are a modern 3D representation that captures realistic detail and lighting while loading quickly in a web viewer. </p>
-          </details>
+    <div class="services-stack">
+        <section class="service-block is-active">
+            <div class="service-block__head">
+                <div class="service-block__eyebrow">FAQ</div>
+                <div class="service-block__title">Answers about capture, deliverables, hosting, and project fit</div>
+            </div>
 
-          <details class="faq-item">
-            <summary>What do we receive at delivery?</summary>
-            <p>You receive a hosted viewer link, an embed option, and exports on request (e.g., PLY/SPLAT/KSPLAT), plus stills/video if included. </p>
-          </details>
+            <p class="faq-intro">
+                SplatCap 3D is designed for clients who want a more photoreal, more compelling digital representation of a real space. These are the questions that come up most often when planning a project.
+            </p>
 
-          <details class="faq-item">
-            <summary>How long does capture take?</summary>
-            <p>Many single-location captures take a few hours. Larger or multi-zone sites can take half a day to multiple days depending on access and scope. </p>
-          </details>
+            <div class="faq-grid">
+                <div class="faq-stack">
+                    <details class="faq-item" open>
+                        <summary>What is SplatCap 3D?</summary>
+                        <div class="faq-answer">
+                            <p>SplatCap 3D is a service for capturing real spaces and turning them into photoreal, navigable 3D experiences. It is suited to property marketing, tourism and hospitality, construction communication, industrial familiarization, branded presentations, and long-term digital preservation.</p>
+                        </div>
+                    </details>
 
-          <details class="faq-item">
-            <summary>Can you capture active industrial or construction sites?</summary>
-            <p>Yes. We scope around safety constraints and access windows, and we can schedule captures to minimize disruption. </p>
-          </details>
+                    <details class="faq-item">
+                        <summary>What is a Gaussian splat model?</summary>
+                        <div class="faq-answer">
+                            <p>A Gaussian splat model is a modern 3D representation that can preserve a highly realistic visual impression of a space while remaining efficient to view online. In practice, it produces a result that often feels more photographic and more natural than older digital twin styles.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How is this different from Matterport or other scanning platforms?</summary>
+                        <div class="faq-answer">
+                            <p>The main difference is presentation quality and workflow. SplatCap 3D is built around faster capture and a more photoreal final result. For many projects, the experience feels less like a conventional scan and more like being present in the space.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>What kinds of spaces can you capture?</summary>
+                        <div class="faq-answer">
+                            <p>We can capture residential interiors, commercial properties, venues, clubhouses, hospitality spaces, industrial environments, construction sites, and other real-world locations where a navigable 3D record would be useful.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How long does a capture usually take?</summary>
+                        <div class="faq-answer">
+                            <p>Smaller projects may take only a few hours on site. Larger, more complex, or multi-zone spaces can take half a day to several days depending on access, operating conditions, and the amount of coverage required.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How long does processing take after capture?</summary>
+                        <div class="faq-answer">
+                            <p>Turnaround depends on project size and deliverables. Many straightforward projects can be delivered quickly, while larger branded or multi-zone projects take longer because they involve more processing, review, and presentation work.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>What do we receive at delivery?</summary>
+                        <div class="faq-answer">
+                            <p>Most projects include a hosted viewer link and a finished 3D experience ready to share. Depending on scope, delivery can also include embeds, screenshots, teaser visuals, annotations, guided views, branded presentation layers, and archive exports where required.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Can the final tour be embedded on our website?</summary>
+                        <div class="faq-answer">
+                            <p>Yes. Many projects are delivered for direct sharing by link, but web embedding is also possible when that suits the marketing or internal use case better.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Do you offer hosting?</summary>
+                        <div class="faq-answer">
+                            <p>Yes. Hosting can be kept simple for single-site projects or scaled into more advanced arrangements for branded, private, or multi-location environments.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Can you capture active construction or industrial environments?</summary>
+                        <div class="faq-answer">
+                            <p>Yes. Active environments can be captured as long as the scope, access, and safety requirements are planned properly. Scheduling can be arranged to reduce disruption and fit operational windows.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Do you provide fixed pricing?</summary>
+                        <div class="faq-answer">
+                            <p>Some projects fit well into standard pricing ranges, but final pricing depends on size, complexity, travel, access constraints, hosting requirements, and the level of presentation or branding involved. The quickest way to get a precise number is to send the basics of the site and intended use.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>What information do you need for a quote?</summary>
+                        <div class="faq-answer">
+                            <p>A short description is usually enough to start: the type of space, approximate size, location, intended use, and timeline. Photos, plans, or reference material can help, but they are not always necessary for an initial estimate.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <aside class="faq-side">
+                    <article class="faq-card faq-card--highlight">
+                        <h3>Best fit projects</h3>
+                        <p>SplatCap 3D works especially well when presentation quality matters, when a space needs to be understood remotely, or when a conventional gallery of still photos is not enough.</p>
+                        <div class="faq-chip-row">
+                            <span class="faq-chip">Premium real estate</span>
+                            <span class="faq-chip">Tourism &amp; venues</span>
+                            <span class="faq-chip">Construction review</span>
+                            <span class="faq-chip">Industrial familiarization</span>
+                            <span class="faq-chip">Branded experiences</span>
+                        </div>
+                    </article>
+
+                    <article class="faq-card">
+                        <h3>Typical project flow</h3>
+                        <p>Most engagements follow a simple sequence: scope the site, schedule capture, process the model, review the result, and deliver the hosted experience or required outputs.</p>
+                    </article>
+
+                    <article class="faq-card">
+                        <h3>Need a direct answer?</h3>
+                        <p>If your question is project-specific, the fastest route is to send the site details through the contact page. We can usually identify the likely workflow and pricing range very quickly.</p>
+                    </article>
+                </aside>
+            </div>
+        </section>
+
+        <section class="services-cta">
+            <h2>Have a specific project in mind?</h2>
+            <p>Send the basic details and we will recommend the right capture and delivery approach.</p>
+            <a href="contact-4.html" class="cta-button">Get a Quote →</a>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services-9.html">Services Overview</a></li>
+                    <li><a href="services-9.html#real-estate">Real Estate</a></li>
+                    <li><a href="services-9.html#construction-development">Construction &amp; Development</a></li>
+                    <li><a href="services-9.html#hosting-enhancements">Hosting &amp; Sharing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Compare</h4>
+                <ul>
+                    <li><a href="compare.html">Compare Overview</a></li>
+                    <li><a href="pricing-7.html">Pricing</a></li>
+                    <li><a href="case-studies-3.html">Projects</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about-2.html">About</a></li>
+                    <li><a href="compare.html">Compare</a></li>
+                    <li><a href="faq-5.html">FAQ</a></li>
+                    <li><a href="contact-4.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:hello@splatcap3d.com">hello@splatcap3d.com</a></li>
+                    <li><a href="contact-4.html">Get a Quote</a></li>
+                    <li><a href="pricing-7.html">Pricing</a></li>
+                </ul>
+            </div>
         </div>
 
-        <!-- FAQ Schema (template; replace with real Q/A once business plan is provided) -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is a Gaussian splat model?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Gaussian splats are a modern 3D representation that captures realistic detail while loading quickly in a web viewer."
-              }
-            }
-          ]
-        }
-        </script>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>Immersa 3D</strong>
-        <p class="muted">High-fidelity 3D capture, Gaussian-splat processing, and hosted digital twins for teams that need clarity without site visits.</p>
-      </div>
-      <div>
-        <strong>Pages</strong>
-        <nav class="footer-nav" aria-label="Footer">
-          <a href="../index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="case-studies.html">Examples</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-        </nav>
-      </div>
-      <div>
-        <strong>Contact</strong>
-        <p class="muted">Email: <a href="mailto:hello@immersa3d.com">hello@immersa3d.com</a></p>
-      </div>
+        <div class="powered-by">
+            SplatCap 3D is a service of <a href="https://droneservicescanadainc.com">Drone Services Canada Inc.</a> — 8+ years of reality capture expertise serving the Greater Toronto &amp; Hamilton Area and clients across Ontario.
+        </div>
     </div>
-    <div class="container footer-bottom">
-      <small class="muted">© <span id="year"></span> Immersa 3D. All rights reserved.</small>
-    </div>
-  </footer>
+</footer>
 
-  <script src="../assets/js/main.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is SplatCap 3D?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SplatCap 3D is a service for capturing real spaces and turning them into photoreal, navigable 3D experiences for marketing, communication, training, and digital preservation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Gaussian splat model?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Gaussian splat model is a modern 3D representation that preserves a highly realistic visual impression of a space while remaining efficient to view online."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do we receive at delivery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most projects include a hosted viewer link and a finished 3D experience ready to share, with possible additions such as embeds, screenshots, annotations, guided views, branded presentation layers, and archive exports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you capture active construction or industrial environments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Active environments can be captured when scope, access, and safety requirements are planned properly."
+      }
+    }
+  ]
+}
+</script>
+
 </body>
 </html>
