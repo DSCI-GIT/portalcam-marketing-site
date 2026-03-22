@@ -698,3 +698,133 @@ footer {
   height: 100%;
   border: 0;
 }
+/* ===== MOBILE NAV MENU ===== */
+
+/* hidden on desktop */
+.nav-toggle {
+  display: none;
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.nav-toggle:hover {
+  border-color: rgba(0, 122, 255, 0.22);
+}
+
+.nav-toggle span {
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 999px;
+  transition: transform 0.22s ease, opacity 0.22s ease, top 0.22s ease;
+}
+
+.nav-toggle span:nth-child(1) {
+  top: 15px;
+}
+
+.nav-toggle span:nth-child(2) {
+  top: 22px;
+}
+
+.nav-toggle span:nth-child(3) {
+  top: 29px;
+}
+
+/* open state */
+.nav-toggle.is-open span:nth-child(1) {
+  top: 22px;
+  transform: rotate(45deg);
+}
+
+.nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open span:nth-child(3) {
+  top: 22px;
+  transform: rotate(-45deg);
+}
+
+/* mobile dropdown wrapper */
+.mobile-nav {
+  display: none;
+}
+
+/* mobile-only behavior */
+@media (max-width: 768px) {
+  .site-nav {
+    position: relative;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-nav {
+    display: block;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: min(320px, calc(100vw - 32px));
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+    z-index: 120;
+  }
+
+  .mobile-nav.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobile-nav a {
+    display: block;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 650;
+    padding: 14px 14px;
+    border-radius: 14px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .mobile-nav a:hover {
+    background: rgba(0, 122, 255, 0.06);
+    color: var(--accent);
+  }
+
+  .mobile-nav a + a {
+    margin-top: 4px;
+  }
+
+  /* small adjustment so header feels balanced on mobile */
+  .logo-lockup,
+  .logo-wrap {
+    min-width: 0;
+  }
+}

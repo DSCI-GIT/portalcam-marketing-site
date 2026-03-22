@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>SplatCap 3D | Photorealistic 3D Tours | Ontario Virtual Tours</title>
-    <meta name="description" content="Fast capture. Fast delivery. Photorealistic 3D tours for real estate, tourism, construction, and industrial training. Serving the Greater Toronto & Hamilton Area and clients across Ontario.">
+    <meta name="description" content="Fast capture. Fast delivery. Photorealistic 3D tours for real estate, tourism, construction, and industrial training. Serving the Greater Toronto &amp; Hamilton Area and clients across Ontario.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -12,16 +12,13 @@
 <header>
     <div class="container">
         <nav class="site-nav">
-
-            <!-- ONLY CHANGE: updated logo -->
             <a href="index.html" class="logo-wrap logo-lockup">
-    <img src="assets/img/brand/splatcap-logo-mark.svg" alt="SplatCap 3D" class="logo-img" id="navLogo">
-
-    <div class="logo-text">
-        <img src="assets/img/brand/splatcap-logo-wordmark.svg" alt="SplatCap 3D" class="logo-wordmark">
-        <span class="logo-text__tag">Photoreal 3D capture</span>
-    </div>
-</a>
+                <img src="assets/img/brand/splatcap-logo-mark.svg" alt="SplatCap 3D" class="logo-img" id="navLogo">
+                <div class="logo-text">
+                    <img src="assets/img/brand/splatcap-logo-wordmark.svg" alt="SplatCap 3D" class="logo-wordmark">
+                    <span class="logo-text__tag">Photoreal 3D capture</span>
+                </div>
+            </a>
 
             <ul class="nav-links">
                 <li><a href="pages/services-9.html">Services</a></li>
@@ -31,6 +28,21 @@
                 <li><a href="pages/about-2.html">About</a></li>
                 <li><a href="pages/contact-4.html">Contact</a></li>
             </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="mobile-nav" id="mobileNav">
+                <a href="pages/services-9.html">Services</a>
+                <a href="pages/compare.html">Compare</a>
+                <a href="pages/pricing-7.html">Pricing</a>
+                <a href="pages/case-studies-3.html">Projects</a>
+                <a href="pages/about-2.html">About</a>
+                <a href="pages/contact-4.html">Contact</a>
+            </div>
         </nav>
     </div>
 </header>
@@ -40,13 +52,11 @@
         <section class="hero">
             <div class="container hero-inner">
                 <div class="hero-copy">
+                    <div class="hero-brand">
+                        <img src="assets/img/brand/splatcap-logo-horizontal.svg" alt="SplatCap 3D">
+                    </div>
 
-    <!-- NEW: full logo above headline -->
-    <div class="hero-brand">
-        <img src="assets/img/brand/splatcap-logo-horizontal.svg" alt="SplatCap 3D">
-    </div>
-
-    <h1 class="hero-title">Walk Through Your Space Once.<br>Share It Forever.</h1>
+                    <h1 class="hero-title">Walk Through Your Space Once.<br>Share It Forever.</h1>
                     <p class="subtitle">Photorealistic 3D tours captured in minutes.</p>
 
                     <div class="speed-claim">
@@ -63,26 +73,26 @@
                     </div>
                 </div>
 
-                <!-- UNCHANGED: your top-right content box -->
                 <div class="hero-visual">
                     <div class="hero-card">
                         <div class="hero-card-media">
-    <iframe 
-        src="https://cloud.splatlabs.ai/viewer/8a0b3494-220c-4a59-822d-428bb43ec3be?view=splat"
-        width="100%"
-        height="100%"
-        frameborder="0"
-        allowfullscreen
-        loading="eager">
-    </iframe>
-</div>
+                            <iframe
+                                src="https://cloud.splatlabs.ai/viewer/8a0b3494-220c-4a59-822d-428bb43ec3be?view=splat"
+                                title="SplatCap 3D featured viewer"
+                                width="100%"
+                                height="100%"
+                                frameborder="0"
+                                allowfullscreen
+                                loading="eager">
+                            </iframe>
+                        </div>
+
                         <div class="hero-card-body">
                             <div class="hero-card-label">SPLATCAP 3D</div>
                             <p>High-end spatial capture for professionals who need stronger presentation, faster capture, and a cleaner client-facing result.</p>
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -93,14 +103,17 @@
                         <div class="number">8+ Years</div>
                         <div class="label">Reality Capture Experience</div>
                     </div>
+
                     <div class="trust-item">
                         <div class="number">15 Min</div>
                         <div class="label">To Capture 3,000 sq ft</div>
                     </div>
+
                     <div class="trust-item">
                         <div class="number">Fast Delivery</div>
                         <div class="label">Delivered ready to use</div>
                     </div>
+
                     <div class="trust-item">
                         <div class="number">Aerial Capture</div>
                         <div class="label">Complete exterior coverage</div>
@@ -262,5 +275,6 @@
     </div>
 </footer>
 
+<script src="assets/js/nav.js"></script>
 </body>
 </html>
