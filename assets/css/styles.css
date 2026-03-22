@@ -19,6 +19,59 @@
   --container: 1200px;
 }
 
+/* ===== LOGO LOCKUP (ADD ONLY) ===== */
+
+.logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-img {
+  height: 58px; /* slightly larger */
+  width: auto;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+
+.logo-text__title {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.logo-text__tag {
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Mobile tweak */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 48px;
+  }
+
+  .logo-text__title {
+    font-size: 12px;
+  }
+
+  .logo-text__tag {
+    font-size: 10px;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -589,4 +642,47 @@ footer {
   .upsell {
     padding: 64px 0 72px;
   }
+  
+}
+.logo-wordmark {
+  height: 10px;
+  width: auto;
+  display: block;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+
+.logo-text__tag {
+  margin-top: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+/* ===== HERO BRAND ABOVE HEADLINE ===== */
+
+.hero-brand {
+  margin-bottom: 18px;
+}
+
+.hero-brand img {
+  height: 112px;
+  width: auto;
+}
+
+/* reduce headline size slightly */
+.hero-title {
+  font-size: clamp(34px, 5vw, 60px); /* was larger */
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+.hero-copy h1.hero-title {
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.05;
 }

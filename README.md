@@ -69,7 +69,7 @@ radial-gradient(circle at 100% 100%, rgba(124, 58, 237, 0.12) 0, transparent 55%
 
 #### Header/Navigation
 - Sticky header, `position: sticky; top: 0; z-index: 50`
-- Logo: `height: 32px` (immersa3dlogo.png)
+- Logo: `height: 32px` (splatcap-logo-horizontal.svg)
 - Nav links: uppercase, 13px, letter-spacing 0.08em, opacity 0.9
 - Hidden on mobile (< 768px)
 - `.header-hidden` class for intro animation (opacity: 0, pointer-events: none)
@@ -225,7 +225,7 @@ border: 1px dashed rgba(148,163,184,0.7);
     intro.js (homepage scroll animation)
   /img/
     /brand/
-      immersa3dlogo.png
+      splatcap-logo-horizontal.svg
 
 /pages/
   services-9.html
