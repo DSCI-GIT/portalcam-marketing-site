@@ -48,7 +48,19 @@
 </header>
 
 <main>
-    <div class="hero-shell">
+    <div class="hero-shell" id="scanHero">
+        <div class="scan-background" id="scanBackground" aria-label="Interactive SplatCap 3D scan background">
+            <iframe
+                class="scan-background__iframe"
+                src="https://cloud.splatlabs.ai/viewer/8a0b3494-220c-4a59-822d-428bb43ec3be?view=splat"
+                title="SplatCap 3D featured viewer"
+                frameborder="0"
+                allowfullscreen
+                loading="eager">
+            </iframe>
+            <div class="scan-background__veil" aria-hidden="true"></div>
+        </div>
+
         <section class="hero">
             <div class="container hero-inner">
                 <div class="hero-copy">
@@ -74,19 +86,7 @@
                 </div>
 
                 <div class="hero-visual">
-                    <div class="hero-card">
-                        <div class="hero-card-media">
-                            <iframe
-                                src="https://cloud.splatlabs.ai/viewer/8a0b3494-220c-4a59-822d-428bb43ec3be?view=splat"
-                                title="SplatCap 3D featured viewer"
-                                width="100%"
-                                height="100%"
-                                frameborder="0"
-                                allowfullscreen
-                                loading="eager">
-                            </iframe>
-                        </div>
-
+                    <div class="hero-card hero-card--floating">
                         <div class="hero-card-body">
                             <div class="hero-card-label">SPLATCAP 3D</div>
                             <p>High-end spatial capture for professionals who need stronger presentation, faster capture, and a cleaner client-facing result.</p>
@@ -118,6 +118,17 @@
                         <div class="number">Aerial Capture</div>
                         <div class="label">Complete exterior coverage</div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="scan-stage" id="scanStage" aria-label="Explore the featured SplatCap 3D scan">
+            <div class="container scan-stage-inner">
+                <div class="scan-stage-card">
+                    <div class="scan-stage-eyebrow">Interactive viewer</div>
+                    <h2>Explore the scan directly.</h2>
+                    <p>After the intro text clears, the background viewer unlocks. Drag, pan, and zoom the scan in place.</p>
+                    <button type="button" class="scan-touch-toggle" id="scanTouchToggle">Enable touch interaction</button>
                 </div>
             </div>
         </section>
@@ -276,5 +287,6 @@
 </footer>
 
 <script src="assets/js/nav.js"></script>
+<script src="assets/js/scan-bg.js"></script>
 </body>
 </html>

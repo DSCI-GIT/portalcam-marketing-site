@@ -828,3 +828,228 @@ footer {
     min-width: 0;
   }
 }
+/* ===== FULL-SCREEN HERO SCAN BACKGROUND ===== */
+
+.hero-shell {
+  min-height: 190svh;
+  background: #05080d;
+  overflow: clip;
+  isolation: isolate;
+}
+
+.scan-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: #05080d;
+  transition: opacity 0.35s ease;
+}
+
+.scan-background__iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.scan-background__veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.84) 28%, rgba(255, 255, 255, 0.36) 58%, rgba(255, 255, 255, 0.12) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.16) 42%, rgba(5, 8, 13, 0.2) 100%);
+  transition: opacity 0.35s ease, background 0.35s ease;
+}
+
+body.scan-bg-visible .scan-background {
+  opacity: 1;
+}
+
+body.scan-bg-interactive .scan-background {
+  pointer-events: auto;
+}
+
+body.scan-bg-interactive .scan-background__veil {
+  opacity: 0.12;
+  background: linear-gradient(180deg, rgba(5, 8, 13, 0.12), rgba(5, 8, 13, 0.08));
+}
+
+.hero-shell > .hero,
+.hero-shell > .trust-bar,
+.hero-shell > .scan-stage {
+  position: relative;
+  z-index: 2;
+}
+
+.hero {
+  min-height: calc(100svh - 82px);
+  display: flex;
+  align-items: center;
+}
+
+.hero-copy {
+  max-width: 720px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-card--floating {
+  max-width: 420px;
+  margin-left: auto;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.trust-bar {
+  padding-top: 12px;
+}
+
+.scan-stage {
+  min-height: 72svh;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.scan-stage-inner {
+  width: min(var(--container), calc(100% - 40px));
+  display: flex;
+  justify-content: flex-end;
+}
+
+.scan-stage-card {
+  width: min(420px, 100%);
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-lg);
+  pointer-events: auto;
+}
+
+.scan-stage-eyebrow {
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.scan-stage-card h2 {
+  margin-bottom: 10px;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.scan-stage-card p {
+  color: var(--text-soft);
+  font-size: 15px;
+}
+
+.scan-touch-toggle {
+  display: none;
+  margin-top: 16px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  color: #ffffff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.section-alt,
+.how-it-works,
+.upsell,
+footer {
+  position: relative;
+  z-index: 5;
+}
+
+@media (max-width: 1100px) {
+  .hero-card--floating {
+    max-width: none;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-shell {
+    min-height: 210svh;
+  }
+
+  .scan-background__veil {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.84) 34%, rgba(255, 255, 255, 0.2) 72%, rgba(5, 8, 13, 0.22) 100%);
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-copy {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .hero-card--floating {
+    margin-top: 0;
+  }
+
+  .scan-stage {
+    min-height: 78svh;
+    align-items: flex-end;
+    padding-bottom: 30px;
+  }
+
+  .scan-stage-inner {
+    justify-content: center;
+  }
+
+  .scan-stage-card {
+    padding: 20px;
+  }
+
+  .scan-touch-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  body.scan-bg-interactive .scan-background {
+    pointer-events: none;
+  }
+
+  body.scan-bg-touch-enabled .scan-background {
+    pointer-events: auto;
+  }
+
+  body.scan-bg-touch-enabled {
+    overflow: hidden;
+  }
+
+  body.scan-bg-touch-enabled .scan-touch-toggle {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 200;
+    box-shadow: var(--shadow-md);
+  }
+}
