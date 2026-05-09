@@ -221,26 +221,40 @@
     <div class="coming-bg"></div>
 
     <header>
-        <div class="container">
-            <nav class="site-nav">
-                <a href="../index.html" class="logo-wrap logo-lockup">
-                    <img src="../assets/img/brand/splatcap-logo-mark.svg" alt="SplatCap 3D" class="logo-img" id="navLogo">
-                    <div class="logo-text">
-                        <img src="../assets/img/brand/splatcap-logo-wordmark.svg" alt="SplatCap 3D" class="logo-wordmark">
-                        <span class="logo-text__tag">Photoreal 3D capture</span>
-                    </div>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="services-9.html">Services</a></li>
-                    <li><a href="compare.html">Compare</a></li>
-                    <li><a href="pricing-7.html">Pricing</a></li>
-                    <li><a href="case-studies-3.html">Projects</a></li>
-                    <li><a href="about-2.html">About</a></li>
-                    <li><a href="contact-4.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <nav class="site-nav">
+            <a href="../index.html" class="logo-wrap logo-lockup">
+                <img src="../assets/img/brand/splatcap-logo-mark.svg" alt="SplatCap 3D" class="logo-img" id="navLogo">
+                <div class="logo-text">
+                    <img src="../assets/img/brand/splatcap-logo-wordmark.svg" alt="SplatCap 3D" class="logo-wordmark">
+                    <span class="logo-text__tag">Photoreal 3D capture</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="services-9.html">Services</a></li>
+                <li><a href="pricing-7.html">Pricing</a></li>
+                <li><a href="case-studies-3.html">Projects</a></li>
+                <li><a href="about-2.html">About</a></li>
+                <li><a href="contact-4.html">Contact</a></li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="mobile-nav" id="mobileNav">
+                <a href="services-9.html">Services</a>
+                <a href="pricing-7.html">Pricing</a>
+                <a href="case-studies-3.html">Projects</a>
+                <a href="about-2.html">About</a>
+                <a href="contact-4.html">Contact</a>
+            </div>
+        </nav>
+    </div>
+</header>
 
     <main class="coming-main">
         <div class="coming-content">
@@ -265,13 +279,57 @@
     </main>
 
     <footer>
-        <div class="footer-inner">
-            <div class="powered-by">
-                SplatCap 3D is a service of
-                <a href="https://droneservicescanadainc.com">Drone Services Canada Inc.</a>
+    <div class="footer-inner">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services-9.html#capture-scan">Capture &amp; Scan</a></li>
+                    <li><a href="services-9.html#processing-deliverables">Processing</a></li>
+                    <li><a href="services-9.html#hosting-enhancements">Hosting</a></li>
+                    <li><a href="pricing-7.html">Pricing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Applications</h4>
+                <ul>
+                    <li><a href="services-9.html#real-estate">Real Estate</a></li>
+                    <li><a href="services-9.html#tourism-hospitality">Tourism &amp; Hospitality</a></li>
+                    <li><a href="services-9.html#construction-development">Construction &amp; Development</a></li>
+                    <li><a href="services-9.html#industrial-training">Industrial Training</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about-2.html">About</a></li>
+                    <li><a href="case-studies-3.html">Projects</a></li>
+                    <li><a href="faq-5.html">FAQ</a></li>
+                    <li><a href="contact-4.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:hello@splatcap3d.com">hello@splatcap3d.com</a></li>
+                    <li><a href="contact-4.html">Get a Quote</a></li>
+                    <li><a href="https://droneservicescanadainc.com" target="_blank" rel="noopener noreferrer">Drone Services Canada Inc.</a></li>
+                </ul>
             </div>
         </div>
-    </footer>
+
+        <div class="powered-by">
+            SplatCap 3D is a service of <a href="https://droneservicescanadainc.com" target="_blank" rel="noopener noreferrer">Drone Services Canada Inc.</a> —
+            8+ years of reality capture expertise serving the Greater Toronto &amp; Hamilton Area and clients across Ontario.
+            <br><br>
+            <a href="privacy-8.html">Privacy Policy</a> •
+            <a href="terms-10.html">Terms of Service</a>
+        </div>
+    </div>
+</footer>
 
 </div>
 
@@ -341,5 +399,6 @@
 })();
 </script>
 
+<script src="../assets/js/nav.js"></script>
 </body>
 </html>

@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Compare | SplatCap 3D</title>
-    <meta name="description" content="Compare SplatCap 3D with industry-leading 3D capture platforms. Understand differences in speed, realism, workflow, and flexibility.">
+    <title>How It Works | SplatCap 3D</title>
+    <meta name="description" content="How SplatCap 3D captures, processes, hosts, and delivers browser-accessible photoreal 3D scan experiences.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/compare.css">
@@ -12,185 +12,98 @@
 <header>
     <div class="container">
         <nav class="site-nav">
-            <a href="../index.html" class="logo-wrap">
-                <img src="../assets/img/brand/splatcap-logo-horizontal.svg" alt="SplatCap 3D" class="logo-img">
+            <a href="../index.html" class="logo-wrap logo-lockup">
+                <img src="../assets/img/brand/splatcap-logo-mark.svg" alt="SplatCap 3D" class="logo-img" id="navLogo">
+                <div class="logo-text">
+                    <img src="../assets/img/brand/splatcap-logo-wordmark.svg" alt="SplatCap 3D" class="logo-wordmark">
+                    <span class="logo-text__tag">Photoreal 3D capture</span>
+                </div>
             </a>
+
             <ul class="nav-links">
                 <li><a href="services-9.html">Services</a></li>
-                <li><a href="compare.html">Compare</a></li>
                 <li><a href="pricing-7.html">Pricing</a></li>
                 <li><a href="case-studies-3.html">Projects</a></li>
                 <li><a href="about-2.html">About</a></li>
                 <li><a href="contact-4.html">Contact</a></li>
             </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="mobile-nav" id="mobileNav">
+                <a href="services-9.html">Services</a>
+                <a href="pricing-7.html">Pricing</a>
+                <a href="case-studies-3.html">Projects</a>
+                <a href="about-2.html">About</a>
+                <a href="contact-4.html">Contact</a>
+            </div>
         </nav>
     </div>
 </header>
 
 <main class="compare-page">
-
     <section class="compare-hero">
-        <div class="compare-kicker">Comparison</div>
-        <h1>SplatCap 3D vs Industry Leader</h1>
-        <p>Faster capture. More realistic output. Fewer constraints.</p>
+        <div class="compare-kicker">Workflow</div>
+        <h1>Capture, Process, Host, Share</h1>
+        <p>A practical workflow for creating browser-accessible spatial experiences without turning delivery into a file-management problem.</p>
         <div class="compare-hero__cta">
-            <a href="contact-4.html" class="cta-button">Request a Demo</a>
+            <a href="contact-4.html" class="cta-button">Plan a Capture</a>
         </div>
     </section>
 
     <section class="compare-section">
-        <h2>The Core Difference</h2>
-        <div class="compare-split">
-            <article class="compare-card compare-card--focus">
-                <div class="compare-card__label">SplatCap 3D</div>
-                <div class="compare-card__title">Capture the space as it is experienced.</div>
-                <ul class="compare-list">
-                    <li>Walk-through capture — no stopping at fixed positions.</li>
-                    <li>Photoreal output using Gaussian splat rendering.</li>
-                    <li>Minimal setup and fast deployment.</li>
-                    <li>Works well in large, complex, or active environments.</li>
-                </ul>
-            </article>
-
-            <article class="compare-card">
-                <div class="compare-card__label">Matterport</div>
-                <div class="compare-card__title">Structured capture inside a fixed platform.</div>
-                <ul class="compare-list">
-                    <li>Capture performed step-by-step at fixed scan points.</li>
-                    <li>Mesh-based reconstruction with texture overlay.</li>
-                    <li>More controlled workflow, but slower to execute.</li>
-                    <li>Strong ecosystem with standardized outputs.</li>
-                </ul>
-            </article>
-        </div>
-    </section>
-
-    <section class="compare-section">
-        <h2>At-a-Glance</h2>
-        <div class="compare-table-wrap">
-            <table class="compare-table">
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>SplatCap 3D</th>
-                        <th>Matterport</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Capture Speed</td>
-                        <td>Fast walk-through capture</td>
-                        <td>Slower, step-based capture</td>
-                    </tr>
-                    <tr>
-                        <td>Workflow</td>
-                        <td>Fluid, continuous movement</td>
-                        <td>Stop-and-scan process</td>
-                    </tr>
-                    <tr>
-                        <td>Realism</td>
-                        <td>Highly photoreal</td>
-                        <td>Clean but more synthetic</td>
-                    </tr>
-                    <tr>
-                        <td>Setup</td>
-                        <td>Low overhead</td>
-                        <td>Moderate setup required</td>
-                    </tr>
-                    <tr>
-                        <td>Large Spaces</td>
-                        <td>Scales efficiently</td>
-                        <td>Becomes slower as size increases</td>
-                    </tr>
-                    <tr>
-                        <td>Flexibility</td>
-                        <td>High</td>
-                        <td>Moderate</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section class="compare-section">
-        <h2>Where SplatCap 3D Stands Out</h2>
-        <div class="compare-grid-3">
-            <article class="compare-mini">
-                <h3>Speed Matters</h3>
-                <p>Capture large or multi-level spaces quickly without interrupting operations.</p>
-            </article>
-            <article class="compare-mini">
-                <h3>Complex Environments</h3>
-                <p>Works better in cluttered, industrial, or irregular spaces.</p>
-            </article>
-            <article class="compare-mini">
-                <h3>Visual Quality</h3>
-                <p>Produces a more natural, less processed look.</p>
-            </article>
-            <article class="compare-mini">
-                <h3>Lower Friction</h3>
-                <p>Less setup and fewer constraints during capture.</p>
-            </article>
-            <article class="compare-mini">
-                <h3>Better for Repeats</h3>
-                <p>Efficient enough for ongoing documentation and updates.</p>
-            </article>
-            <article class="compare-mini">
-                <h3>Service-Based Delivery</h3>
-                <p>Delivered as a finished product, not just a platform.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="compare-section">
-        <h2>Where Matterport Still Fits</h2>
-        <div class="compare-grid-2">
-            <article class="compare-mini">
-                <h3>Existing Workflows</h3>
-                <p>Teams already invested in Matterport may prefer to stay within that system.</p>
-            </article>
-            <article class="compare-mini">
-                <h3>Standard Listings</h3>
-                <p>Simple real estate use cases where familiarity is enough.</p>
-            </article>
-            <article class="compare-mini">
-                <h3>Platform Preference</h3>
-                <p>Some buyers prefer a known ecosystem over flexibility.</p>
-            </article>
-            <article class="compare-mini">
-                <h3>Subscription Model</h3>
-                <p>Fits organizations that want a self-service platform.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="compare-section">
-        <h2>Process Overview</h2>
+        <h2>The Process</h2>
         <div class="compare-process">
             <article class="compare-step">
                 <div class="compare-step__num">1</div>
-                <h3>Capture</h3>
-                <p>Walk the space once at a natural pace.</p>
+                <h3>Scope</h3>
+                <p>We confirm the space, approximate size, access constraints, safety requirements, and how the final scan will be used.</p>
             </article>
             <article class="compare-step">
                 <div class="compare-step__num">2</div>
-                <h3>Process</h3>
-                <p>Convert into a photoreal 3D environment.</p>
+                <h3>Capture</h3>
+                <p>Walk-through capture records the environment efficiently while keeping movement natural and disruption low.</p>
             </article>
             <article class="compare-step">
                 <div class="compare-step__num">3</div>
+                <h3>Process</h3>
+                <p>The capture is reconstructed, optimized, and prepared for clean browser viewing.</p>
+            </article>
+            <article class="compare-step">
+                <div class="compare-step__num">4</div>
                 <h3>Deliver</h3>
-                <p>Share via link or embed.</p>
+                <p>You receive a hosted viewer, shareable link, embed option, and supporting delivery details based on the project scope.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="compare-section">
+        <h2>Built Around Real Project Use</h2>
+        <div class="compare-grid-3">
+            <article class="compare-mini">
+                <h3>Marketing</h3>
+                <p>Use the scan on listing pages, venue pages, sales presentations, and public-facing project pages.</p>
+            </article>
+            <article class="compare-mini">
+                <h3>Documentation</h3>
+                <p>Create a practical visual record of a space for review, reference, training, or stakeholder communication.</p>
+            </article>
+            <article class="compare-mini">
+                <h3>Remote Review</h3>
+                <p>Give clients and team members a better sense of layout and atmosphere without requiring a site visit.</p>
             </article>
         </div>
     </section>
 
     <section class="compare-cta">
-        <h2>See the Difference in Your Own Space</h2>
-        <p>If you're comparing options, the easiest way to decide is to see both approaches on a real project.</p>
-        <a href="contact-4.html" class="cta-button">Start a Project</a>
+        <h2>Start With the Use Case</h2>
+        <p>Tell us whether the scan is for marketing, documentation, training, or stakeholder review. The capture plan and delivery format can be matched to that goal.</p>
+        <a href="contact-4.html" class="cta-button">Get a Quote</a>
     </section>
-
 </main>
 
 <footer>
@@ -199,20 +112,20 @@
             <div class="footer-section">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="services-9.html">Services Overview</a></li>
-                    <li><a href="services-9.html#real-estate">Real Estate</a></li>
-                    <li><a href="services-9.html#construction-development">Construction &amp; Development</a></li>
-                    <li><a href="services-9.html#hosting-enhancements">Hosting &amp; Sharing</a></li>
+                    <li><a href="services-9.html#capture-scan">Capture &amp; Scan</a></li>
+                    <li><a href="services-9.html#processing-deliverables">Processing</a></li>
+                    <li><a href="services-9.html#hosting-enhancements">Hosting</a></li>
+                    <li><a href="pricing-7.html">Pricing</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h4>Compare</h4>
+                <h4>Applications</h4>
                 <ul>
-                    <li><a href="compare.html">Compare Overview</a></li>
-                    <li><a href="compare.html#">SplatCap 3D vs Industry Leader</a></li>
-                    <li><a href="pricing-7.html">Pricing</a></li>
-                    <li><a href="case-studies-3.html">Projects</a></li>
+                    <li><a href="services-9.html#real-estate">Real Estate</a></li>
+                    <li><a href="services-9.html#tourism-hospitality">Tourism &amp; Hospitality</a></li>
+                    <li><a href="services-9.html#construction-development">Construction &amp; Development</a></li>
+                    <li><a href="services-9.html#industrial-training">Industrial Training</a></li>
                 </ul>
             </div>
 
@@ -220,7 +133,7 @@
                 <h4>Company</h4>
                 <ul>
                     <li><a href="about-2.html">About</a></li>
-                    <li><a href="how-it-works-6.html">How It Works</a></li>
+                    <li><a href="case-studies-3.html">Projects</a></li>
                     <li><a href="faq-5.html">FAQ</a></li>
                     <li><a href="contact-4.html">Contact</a></li>
                 </ul>
@@ -231,16 +144,20 @@
                 <ul>
                     <li><a href="mailto:hello@splatcap3d.com">hello@splatcap3d.com</a></li>
                     <li><a href="contact-4.html">Get a Quote</a></li>
-                    <li><a href="pricing-7.html">Pricing</a></li>
+                    <li><a href="https://droneservicescanadainc.com" target="_blank" rel="noopener noreferrer">Drone Services Canada Inc.</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="powered-by">
-            SplatCap 3D is a service of <a href="https://droneservicescanadainc.com">Drone Services Canada Inc.</a> — 8+ years of reality capture expertise serving the Greater Toronto &amp; Hamilton Area and clients across Ontario.
+            SplatCap 3D is a service of <a href="https://droneservicescanadainc.com" target="_blank" rel="noopener noreferrer">Drone Services Canada Inc.</a> —
+            8+ years of reality capture expertise serving the Greater Toronto &amp; Hamilton Area and clients across Ontario.
+            <br><br>
+            <a href="privacy-8.html">Privacy Policy</a> •
+            <a href="terms-10.html">Terms of Service</a>
         </div>
     </div>
 </footer>
-
+<script src="../assets/js/nav.js"></script>
 </body>
 </html>

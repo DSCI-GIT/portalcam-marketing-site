@@ -331,3 +331,31 @@
     font-size: 16px;
   }
 }
+
+/* Responsive comparison/about-page safeguards */
+.compare-hero,
+.compare-section,
+.compare-cta {
+  max-width: min(1180px, calc(100% - clamp(28px, 6vw, 56px)));
+}
+
+@media (max-width: 900px) {
+  .compare-split,
+  .compare-grid-3,
+  .compare-process {
+    grid-template-columns: 1fr !important;
+  }
+
+  .compare-hero {
+    padding-top: 70px;
+    text-align: left;
+  }
+
+  .compare-hero h1 {
+    font-size: clamp(38px, 10vw, 56px);
+  }
+
+  .compare-hero p {
+    margin-left: 0;
+  }
+}
