@@ -106,6 +106,8 @@
         }
 
         .scan-interaction-panel {
+            position: relative;
+            z-index: 30;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -124,6 +126,12 @@
             user-select: none;
         }
 
+        .scan-touch-toggle.scan-control-button {
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+
         .scan-control-button,
         .scan-exit-button {
             appearance: none;
@@ -138,6 +146,9 @@
         }
 
         .scan-control-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             color: #061321;
             background: rgba(105, 224, 255, 0.95);
             box-shadow: 0 0 22px rgba(105, 224, 255, 0.34);
@@ -425,12 +436,12 @@
                         class="scan-touch-toggle scan-control-button"
                         id="scanTouchToggle"
                         aria-pressed="false"
-                        data-enabled-label="Scan control is on"
-                        data-disabled-label="Click to control scan">
-                        Click to control scan
+                        data-enabled-label="Controlling scan"
+                        data-disabled-label="Control the scan">
+                        Control the scan
                     </button>
                     <button type="button" class="scan-exit-button" id="scanExitButton">Back to website</button>
-                    <span class="scan-control-note" id="scanControlNote">Page scroll stays active until scan control is turned on.</span>
+                    <span class="scan-control-note" id="scanControlNote">Select the scan to look around.</span>
                 </div>
             </div>
         </section>
@@ -651,8 +662,8 @@
 
         if (!scanBackground || !toggle) return;
 
-        const disabledLabel = toggle.dataset.disabledLabel || 'Click to control scan';
-        const enabledLabel = toggle.dataset.enabledLabel || 'Scan control is on';
+        const disabledLabel = toggle.dataset.disabledLabel || 'Control the scan';
+        const enabledLabel = toggle.dataset.enabledLabel || 'Controlling scan';
 
         function setScanControl(enabled) {
             body.classList.toggle('scan-control-active', enabled);
@@ -662,8 +673,8 @@
 
             if (note) {
                 note.textContent = enabled
-                    ? 'Use the scan now. Select Back to website or press Esc to restore page scrolling.'
-                    : 'Page scroll stays active until scan control is turned on.';
+                    ? 'Move through the scan. Use Back to website when finished.'
+                    : 'Select the scan to look around.';
             }
         }
 
