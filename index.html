@@ -367,8 +367,8 @@
                 <div class="scan-interaction-panel" aria-label="Scan interaction control">
                     <button
                         type="button"
-                        class="scan-touch-toggle scan-control-button"
-                        id="scanTouchToggle"
+                        class="scan-control-button"
+                        id="scanControlToggle"
                         aria-pressed="false">
                         Control the scan
                     </button>
@@ -586,7 +586,7 @@
     (function () {
         const body = document.body;
         const scanBackground = document.getElementById('scanBackground');
-        const toggle = document.getElementById('scanTouchToggle');
+        const toggle = document.getElementById('scanControlToggle');
 
         if (!scanBackground || !toggle) return;
 
