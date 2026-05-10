@@ -7,6 +7,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/services.css">
+    <style>
+        /* Test embeds for service-page examples. Kept local so this page can be overwritten independently. */
+        .service-embed-stack {
+            display: grid;
+            gap: 14px;
+            width: 100%;
+        }
+
+        .service-embed-card {
+            overflow: hidden;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.82);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        .service-embed-label {
+            padding: 11px 14px;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+            color: var(--text-soft);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: rgba(248, 250, 252, 0.86);
+        }
+
+        .service-embed-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            min-height: 320px;
+            background: #ffffff;
+        }
+
+        .service-embed-frame iframe {
+            position: absolute;
+            inset: 0;
+            width: 100% !important;
+            height: 100% !important;
+            border: 0 !important;
+        }
+
+        @media (max-width: 768px) {
+            .service-embed-frame {
+                aspect-ratio: 4 / 5;
+                min-height: 420px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-embed-frame {
+                min-height: 360px;
+            }
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -59,7 +115,14 @@
 
             <div class="service-block__grid">
                 <div class="service-block__media">
-                    <div class="service-block__media-placeholder">Real estate tour image or embedded viewer still</div>
+                    <div class="service-embed-stack">
+                        <div class="service-embed-card">
+                            <div class="service-embed-label">Example scan: Airbnb property</div>
+                            <div class="service-embed-frame">
+                                <iframe id="viewer-airbnb" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=8ccaea4a" title="Airbnb 3D scan"></iframe>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div>
@@ -93,7 +156,21 @@
 
             <div class="service-block__grid">
                 <div class="service-block__media">
-                    <div class="service-block__media-placeholder">Winery, venue, clubhouse, or attraction image placeholder</div>
+                    <div class="service-embed-stack">
+                        <div class="service-embed-card">
+                            <div class="service-embed-label">Example scan: Bloodroot sculpture, Royal Botanical Gardens</div>
+                            <div class="service-embed-frame">
+                                <iframe src="https://lumalabs.ai/embed/63713c30-c542-4afe-85cb-2afbd4ebe678?mode=sparkles&amp;background=%23ffffff&amp;color=%23000000&amp;showTitle=true&amp;loadBg=true&amp;logoPosition=bottom-left&amp;infoPosition=bottom-right&amp;cinematicVideo=undefined&amp;showMenu=false" title="Bloodroot sculpture 3D scan" loading="lazy" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="service-embed-card">
+                            <div class="service-embed-label">Example scan: Wando Tower, Korea</div>
+                            <div class="service-embed-frame">
+                                <iframe src="https://lumalabs.ai/embed/d0d53451-5729-4c6f-a490-f1aaa37bddb6?mode=sparkles&amp;background=%23ffffff&amp;color=%23000000&amp;showTitle=true&amp;loadBg=true&amp;logoPosition=bottom-left&amp;infoPosition=bottom-right&amp;cinematicVideo=undefined&amp;showMenu=false" title="Wando Tower Korea 3D scan" loading="lazy" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div>
