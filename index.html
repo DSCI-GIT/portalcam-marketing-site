@@ -13,10 +13,21 @@
             isolation: isolate;
         }
 
+        /* Default state: the iframe is visible, but it cannot steal scroll or clicks. */
+        body:not(.scan-control-active) #scanBackground,
+        body:not(.scan-control-active) #scanBackground .scan-background__iframe {
+            pointer-events: none !important;
+        }
+
+        body.scan-control-active #scanBackground,
+        body.scan-control-active #scanBackground .scan-background__iframe {
+            pointer-events: auto !important;
+        }
+
         .hero {
             position: relative;
             z-index: 3;
-            min-height: clamp(250px, 34svh, 460px);
+            min-height: clamp(265px, 36svh, 465px);
             display: flex;
             align-items: flex-start;
             padding: clamp(5.25rem, 10vw, 7rem) 0 0.75rem;
@@ -32,15 +43,15 @@
         }
 
         .hero-copy.hero-copy--minimal {
-            width: min(680px, calc(100vw - 2rem));
+            width: min(700px, calc(100vw - 2rem));
             margin: 0 auto;
             padding: clamp(0.85rem, 2.2vw, 1.25rem);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             border-radius: clamp(1.15rem, 2vw, 1.65rem);
-            background: rgba(255, 255, 255, 0.09);
-            -webkit-backdrop-filter: blur(18px) saturate(135%);
-            backdrop-filter: blur(18px) saturate(135%);
-            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.22);
+            background: rgba(255, 255, 255, 0.065);
+            -webkit-backdrop-filter: blur(16px) saturate(130%);
+            backdrop-filter: blur(16px) saturate(130%);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.18);
             text-align: center;
             pointer-events: auto;
         }
@@ -57,6 +68,14 @@
             margin: 0 auto;
         }
 
+        .hero-mini-subtitle {
+            margin: clamp(0.55rem, 1.35vw, 0.8rem) auto 0;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(1rem, 1.7vw, 1.22rem);
+            line-height: 1.35;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.36);
+        }
+
         .hero-copy--minimal .hero-actions {
             margin-top: clamp(0.85rem, 2vw, 1.25rem);
             display: flex;
@@ -68,11 +87,11 @@
 
         .scan-stage {
             position: relative;
-            z-index: 3;
-            min-height: clamp(420px, 66svh, 780px);
+            z-index: 5;
+            min-height: clamp(420px, 64svh, 780px);
             display: flex;
             align-items: flex-start;
-            padding-top: clamp(0.8rem, 2svh, 1.35rem);
+            padding-top: clamp(0.45rem, 1.4svh, 1rem);
             pointer-events: none;
         }
 
@@ -86,93 +105,77 @@
             pointer-events: none;
         }
 
-        .scan-interaction-hint {
+        .scan-interaction-panel {
             display: inline-flex;
             align-items: center;
-            gap: 0.55rem;
+            justify-content: center;
+            gap: 0.65rem;
             margin: 0 auto;
-            padding: 0.7rem 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.22);
+            padding: 0.52rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 999px;
-            color: rgba(255, 255, 255, 0.92);
-            background: rgba(5, 13, 24, 0.42);
+            color: rgba(255, 255, 255, 0.94);
+            background: rgba(5, 13, 24, 0.48);
             -webkit-backdrop-filter: blur(14px);
             backdrop-filter: blur(14px);
             box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
-            font-size: clamp(0.78rem, 1vw, 0.95rem);
             line-height: 1.2;
-            letter-spacing: 0.01em;
-            pointer-events: none;
+            pointer-events: auto;
             user-select: none;
         }
 
-        .scan-interaction-hint__dot {
-            width: 0.48rem;
-            height: 0.48rem;
-            border-radius: 999px;
-            background: rgba(105, 224, 255, 0.92);
-            box-shadow: 0 0 18px rgba(105, 224, 255, 0.72);
-            flex: 0 0 auto;
-        }
-
-        .scan-mobile-controls {
-            display: none;
-        }
-
-        .scan-mobile-switch {
+        .scan-control-button,
+        .scan-exit-button {
             appearance: none;
-            border: 1px solid rgba(255, 255, 255, 0.24);
+            border: 0;
             border-radius: 999px;
-            padding: 0.52rem 0.78rem 0.52rem 0.55rem;
-            background: rgba(4, 12, 22, 0.76);
-            color: rgba(255, 255, 255, 0.94);
-            -webkit-backdrop-filter: blur(16px);
-            backdrop-filter: blur(16px);
-            box-shadow: 0 14px 44px rgba(0, 0, 0, 0.34);
+            padding: 0.7rem 1rem;
             font: inherit;
-            font-size: 0.86rem;
+            font-size: clamp(0.82rem, 1vw, 0.95rem);
             line-height: 1;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.62rem;
             cursor: pointer;
-            pointer-events: auto;
+            white-space: nowrap;
         }
 
-        .scan-mobile-switch__track {
-            width: 2.35rem;
-            height: 1.25rem;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.18);
-            position: relative;
-            flex: 0 0 auto;
-            transition: background 180ms ease;
+        .scan-control-button {
+            color: #061321;
+            background: rgba(105, 224, 255, 0.95);
+            box-shadow: 0 0 22px rgba(105, 224, 255, 0.34);
         }
 
-        .scan-mobile-switch__thumb {
-            position: absolute;
-            top: 0.18rem;
-            left: 0.18rem;
-            width: 0.89rem;
-            height: 0.89rem;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.92);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
-            transition: transform 180ms ease;
+        .scan-control-button[aria-pressed="true"] {
+            background: rgba(255, 255, 255, 0.94);
         }
 
-        .scan-mobile-switch[aria-pressed="true"] .scan-mobile-switch__track {
-            background: rgba(105, 224, 255, 0.56);
+        .scan-exit-button {
+            display: none;
+            color: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.16);
         }
 
-        .scan-mobile-switch[aria-pressed="true"] .scan-mobile-switch__thumb {
-            transform: translateX(1.08rem);
+        body.scan-control-active .scan-exit-button {
+            display: inline-flex;
+        }
+
+        .scan-control-note {
+            padding: 0 0.55rem 0 0;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: clamp(0.76rem, 0.9vw, 0.86rem);
+            white-space: nowrap;
+        }
+
+        body.scan-control-active .scan-control-note {
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .post-scan-intro {
             position: relative;
             z-index: 4;
-            background: linear-gradient(180deg, rgba(6, 13, 24, 0.98), rgba(8, 18, 32, 1));
+            background:
+                radial-gradient(circle at top left, rgba(105, 224, 255, 0.16), transparent 36rem),
+                linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+            color: #102030;
         }
 
         .post-scan-intro .intro-grid {
@@ -185,35 +188,39 @@
 
         .intro-copy-card,
         .intro-proof-card {
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(25, 65, 95, 0.12);
             border-radius: clamp(1.1rem, 2vw, 1.6rem);
-            background: rgba(255, 255, 255, 0.055);
-            -webkit-backdrop-filter: blur(14px);
-            backdrop-filter: blur(14px);
-            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+            background: rgba(255, 255, 255, 0.84);
+            box-shadow: 0 24px 80px rgba(24, 56, 86, 0.12);
             padding: clamp(1.2rem, 3vw, 2rem);
         }
 
         .intro-copy-card .hero-title {
             margin-top: 0;
+            color: #0e2336;
+            text-shadow: none;
         }
 
         .intro-copy-card .subtitle {
             max-width: 58ch;
+            color: #3b5d72;
         }
 
         .intro-copy-card .speed-claim {
             margin-top: 1rem;
+            color: #18384c;
         }
 
         .intro-proof-card {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            color: #264357;
         }
 
         .intro-proof-card .hero-card-label {
             margin-bottom: 0.85rem;
+            color: #1489a7;
         }
 
         .post-scan-intro .trust-bar {
@@ -226,6 +233,20 @@
             padding-right: 0;
         }
 
+        .post-scan-intro .trust-item {
+            background: rgba(255, 255, 255, 0.82);
+            border-color: rgba(25, 65, 95, 0.11);
+            box-shadow: 0 18px 54px rgba(24, 56, 86, 0.09);
+        }
+
+        .post-scan-intro .trust-item .number {
+            color: #102030;
+        }
+
+        .post-scan-intro .trust-item .label {
+            color: #4c6a7d;
+        }
+
         @media (max-width: 880px) {
             .post-scan-intro .intro-grid {
                 grid-template-columns: 1fr;
@@ -234,7 +255,7 @@
 
         @media (max-width: 760px) {
             .hero {
-                min-height: clamp(210px, 31svh, 340px);
+                min-height: clamp(240px, 34svh, 360px);
                 padding-top: clamp(4.65rem, 18vw, 5.6rem);
             }
 
@@ -250,6 +271,10 @@
                 max-height: 70px;
             }
 
+            .hero-mini-subtitle {
+                font-size: 0.98rem;
+            }
+
             .hero-copy--minimal .hero-actions {
                 gap: 0.55rem;
                 margin-top: 0.7rem;
@@ -262,24 +287,45 @@
             }
 
             .scan-stage {
-                min-height: 62svh;
+                min-height: 58svh;
                 align-items: flex-start;
-                padding-top: 0.4rem;
+                padding-top: 0.35rem;
                 padding-bottom: max(0.85rem, env(safe-area-inset-bottom));
             }
 
-            .scan-interaction-hint {
+            .scan-interaction-panel {
+                position: sticky;
+                top: max(4.65rem, env(safe-area-inset-top));
+                width: min(94vw, 430px);
+                display: grid;
+                grid-template-columns: 1fr auto;
+                border-radius: 1.1rem;
+                padding: 0.5rem;
+                gap: 0.45rem;
+            }
+
+            .scan-control-button,
+            .scan-exit-button {
+                width: 100%;
+                justify-content: center;
+                padding: 0.72rem 0.82rem;
+                font-size: 0.85rem;
+            }
+
+            .scan-control-note {
+                grid-column: 1 / -1;
+                padding: 0 0.25rem 0.18rem;
+                text-align: center;
+                white-space: normal;
+                font-size: 0.76rem;
+            }
+
+            body:not(.scan-control-active) .scan-exit-button {
                 display: none;
             }
 
-            .scan-mobile-controls {
-                display: flex;
-                position: sticky;
-                top: max(4.65rem, env(safe-area-inset-top));
-                z-index: 8;
-                width: 100%;
-                justify-content: center;
-                pointer-events: none;
+            body:not(.scan-control-active) .scan-interaction-panel {
+                grid-template-columns: 1fr;
             }
 
             .intro-copy-card,
@@ -295,8 +341,8 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .scan-mobile-switch__track,
-            .scan-mobile-switch__thumb {
+            .scan-control-button,
+            .scan-exit-button {
                 transition: none;
             }
         }
@@ -361,6 +407,8 @@
                         <img src="assets/img/brand/splatcap-logo-horizontal.svg" alt="SplatCap 3D">
                     </div>
 
+                    <p class="hero-mini-subtitle">Photorealistic 3D tours captured in minutes.</p>
+
                     <div class="hero-actions">
                         <a href="pages/contact-4.html" class="cta-button">Get a Quote</a>
                         <a href="pages/about-2.html" class="cta-button-secondary">Why Choose Us</a>
@@ -371,24 +419,18 @@
 
         <section class="scan-stage" id="scanStage" aria-label="Explore the featured SplatCap 3D scan">
             <div class="container scan-stage-inner">
-                <div class="scan-interaction-hint" aria-hidden="true">
-                    <span class="scan-interaction-hint__dot"></span>
-                    <span>Drag to explore the scan. Scroll to continue.</span>
-                </div>
-
-                <div class="scan-mobile-controls" aria-label="Mobile scan interaction controls">
+                <div class="scan-interaction-panel" aria-label="Scan interaction controls">
                     <button
                         type="button"
-                        class="scan-touch-toggle scan-mobile-switch"
+                        class="scan-touch-toggle scan-control-button"
                         id="scanTouchToggle"
                         aria-pressed="false"
-                        data-enabled-label="Scan control on"
-                        data-disabled-label="Scan control off">
-                        <span class="scan-mobile-switch__track" aria-hidden="true">
-                            <span class="scan-mobile-switch__thumb"></span>
-                        </span>
-                        <span class="scan-mobile-switch__label">Scan control off</span>
+                        data-enabled-label="Scan control is on"
+                        data-disabled-label="Click to control scan">
+                        Click to control scan
                     </button>
+                    <button type="button" class="scan-exit-button" id="scanExitButton">Back to website</button>
+                    <span class="scan-control-note" id="scanControlNote">Page scroll stays active until scan control is turned on.</span>
                 </div>
             </div>
         </section>
@@ -599,5 +641,52 @@
 
 <script src="assets/js/nav.js"></script>
 <script src="assets/js/scan-bg.js"></script>
+<script>
+    (function () {
+        const body = document.body;
+        const scanBackground = document.getElementById('scanBackground');
+        const toggle = document.getElementById('scanTouchToggle');
+        const exit = document.getElementById('scanExitButton');
+        const note = document.getElementById('scanControlNote');
+
+        if (!scanBackground || !toggle) return;
+
+        const disabledLabel = toggle.dataset.disabledLabel || 'Click to control scan';
+        const enabledLabel = toggle.dataset.enabledLabel || 'Scan control is on';
+
+        function setScanControl(enabled) {
+            body.classList.toggle('scan-control-active', enabled);
+            scanBackground.classList.toggle('scan-background--manual-active', enabled);
+            toggle.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+            toggle.textContent = enabled ? enabledLabel : disabledLabel;
+
+            if (note) {
+                note.textContent = enabled
+                    ? 'Use the scan now. Select Back to website or press Esc to restore page scrolling.'
+                    : 'Page scroll stays active until scan control is turned on.';
+            }
+        }
+
+        toggle.addEventListener('click', function (event) {
+            event.preventDefault();
+            setScanControl(!body.classList.contains('scan-control-active'));
+        });
+
+        if (exit) {
+            exit.addEventListener('click', function (event) {
+                event.preventDefault();
+                setScanControl(false);
+            });
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                setScanControl(false);
+            }
+        });
+
+        setScanControl(false);
+    }());
+</script>
 </body>
 </html>
