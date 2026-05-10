@@ -43,6 +43,10 @@
             background: #ffffff;
         }
 
+        .service-embed-frame--landscape {
+            aspect-ratio: 16 / 9;
+        }
+
         .service-embed-frame iframe {
             position: absolute;
             inset: 0;
@@ -55,6 +59,11 @@
             .service-embed-frame {
                 aspect-ratio: 16 / 10;
                 min-height: 300px;
+            }
+
+            .service-embed-frame--landscape {
+                aspect-ratio: 16 / 9;
+                min-height: 220px;
             }
         }
 
@@ -266,7 +275,14 @@
 
             <div class="service-block__grid">
                 <div class="service-block__media">
-                    <div class="service-block__media-placeholder">Film location, scouting capture, or previs placeholder</div>
+                    <div class="service-embed-stack">
+                        <div class="service-embed-card">
+                            <div class="service-embed-label">Example scan: William Connell Park playground</div>
+                            <div class="service-embed-frame service-embed-frame--landscape">
+                                <iframe src="https://lcc-viewer.xgrids.com/pub/dbneyf-williamconnellpark" title="William Connell Park playground 3DGS model" loading="lazy" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div>
