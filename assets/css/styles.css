@@ -1383,3 +1383,315 @@ svg {
     transform: translate3d(-50%, -50%, 0) !important;
   }
 }
+
+
+/* ===== INDEX SCAN HERO FINAL OVERRIDES =====
+   Moved here from index.html so the page markup stays clean.
+   The iframe is visible by default but cannot take mouse/touch input until the user chooses Explore the Scan.
+*/
+
+.hero-shell {
+  position: relative;
+  min-height: 190svh;
+  overflow: clip;
+  isolation: isolate;
+  background: #05080d;
+}
+
+body:not(.scan-control-active) #scanBackground,
+body:not(.scan-control-active) #scanBackground .scan-background__iframe {
+  pointer-events: none !important;
+}
+
+body.scan-control-active #scanBackground,
+body.scan-control-active #scanBackground .scan-background__iframe {
+  pointer-events: auto !important;
+}
+
+body.scan-control-active .scan-background__veil {
+  opacity: 0.1;
+  background: linear-gradient(180deg, rgba(5, 8, 13, 0.12), rgba(5, 8, 13, 0.08));
+}
+
+.hero-shell > .hero,
+.hero-shell > .scan-stage {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-shell > .trust-bar {
+  display: none;
+}
+
+.hero {
+  min-height: clamp(265px, 36svh, 465px);
+  display: flex;
+  align-items: flex-start;
+  padding: clamp(5.25rem, 10vw, 7rem) 0 0.75rem;
+  pointer-events: none;
+}
+
+.hero-inner {
+  width: 100%;
+  min-height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero-copy.hero-copy--minimal {
+  width: min(700px, calc(100vw - 2rem));
+  max-width: 700px;
+  margin: 0 auto;
+  padding: clamp(0.85rem, 2.2vw, 1.25rem);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: clamp(1.15rem, 2vw, 1.65rem);
+  background: rgba(255, 255, 255, 0.065);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  backdrop-filter: blur(16px) saturate(130%);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.18);
+  text-align: center;
+  pointer-events: auto;
+}
+
+.hero-brand.hero-brand--minimal {
+  margin: 0 auto;
+}
+
+.hero-brand.hero-brand--minimal img {
+  width: min(340px, 72vw);
+  height: auto;
+  max-height: 92px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero-mini-subtitle {
+  margin: clamp(0.55rem, 1.35vw, 0.8rem) auto 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 1.7vw, 1.22rem);
+  line-height: 1.35;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.36);
+}
+
+.hero-copy--minimal .hero-actions {
+  margin-top: clamp(0.85rem, 2vw, 1.25rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.scan-stage {
+  position: relative;
+  z-index: 5;
+  min-height: clamp(420px, 64svh, 780px);
+  display: flex;
+  align-items: flex-end;
+  padding-top: clamp(0.45rem, 1.4svh, 1rem);
+  padding-bottom: clamp(1rem, 4svh, 2.4rem);
+  pointer-events: none;
+}
+
+.scan-stage-inner {
+  position: relative;
+  width: min(var(--container), calc(100% - clamp(32px, 5vw, 56px)));
+  min-height: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.scan-interaction-panel {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+.scan-control-button {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 999px;
+  padding: 0.78rem 1.15rem;
+  font: inherit;
+  font-size: clamp(0.86rem, 1vw, 0.98rem);
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  color: #061321;
+  background: rgba(105, 224, 255, 0.95);
+  box-shadow: 0 0 22px rgba(105, 224, 255, 0.34);
+  pointer-events: auto;
+}
+
+.scan-control-button[aria-pressed="true"] {
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(5, 13, 24, 0.78);
+  border-color: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.post-scan-intro {
+  position: relative;
+  z-index: 5;
+  background:
+    radial-gradient(circle at top left, rgba(105, 224, 255, 0.16), transparent 36rem),
+    linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+  color: #102030;
+}
+
+.post-scan-intro .intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: stretch;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.intro-copy-card,
+.intro-proof-card {
+  border: 1px solid rgba(25, 65, 95, 0.12);
+  border-radius: clamp(1.1rem, 2vw, 1.6rem);
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 24px 80px rgba(24, 56, 86, 0.12);
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.intro-copy-card .hero-title {
+  margin-top: 0;
+  color: #0e2336;
+  text-shadow: none;
+}
+
+.intro-copy-card .subtitle {
+  max-width: 58ch;
+  color: #3b5d72;
+}
+
+.intro-copy-card .speed-claim {
+  margin-top: 1rem;
+  color: #18384c;
+}
+
+.intro-proof-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #264357;
+}
+
+.intro-proof-card .hero-card-label {
+  margin-bottom: 0.85rem;
+  color: #1489a7;
+}
+
+.post-scan-intro .trust-bar {
+  background: transparent;
+  padding: 0;
+}
+
+.post-scan-intro .trust-bar .container {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
+.post-scan-intro .trust-item {
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(25, 65, 95, 0.11);
+  box-shadow: 0 18px 54px rgba(24, 56, 86, 0.09);
+}
+
+.post-scan-intro .trust-item .number {
+  color: #102030;
+}
+
+.post-scan-intro .trust-item .label {
+  color: #4c6a7d;
+}
+
+@media (max-width: 880px) {
+  .post-scan-intro .intro-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: clamp(240px, 34svh, 360px);
+    padding-top: clamp(4.65rem, 18vw, 5.6rem);
+  }
+
+  .hero-copy.hero-copy--minimal {
+    width: min(94vw, 520px);
+    padding: 0.72rem;
+    border-radius: 1.05rem;
+    background: rgba(255, 255, 255, 0.075);
+  }
+
+  .hero-brand.hero-brand--minimal img {
+    width: min(265px, 68vw);
+    max-height: 70px;
+  }
+
+  .hero-mini-subtitle {
+    font-size: 0.98rem;
+  }
+
+  .hero-copy--minimal .hero-actions {
+    gap: 0.55rem;
+    margin-top: 0.7rem;
+  }
+
+  .hero-copy--minimal .cta-button,
+  .hero-copy--minimal .cta-button-secondary {
+    padding: 0.72rem 0.9rem;
+    font-size: 0.86rem;
+  }
+
+  .scan-stage {
+    min-height: 58svh;
+    align-items: flex-end;
+    padding-top: 0.35rem;
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .scan-stage-inner {
+    width: min(var(--container), calc(100% - 28px));
+  }
+
+  .scan-control-button {
+    min-width: min(78vw, 260px);
+    padding: 0.82rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .intro-copy-card,
+  .intro-proof-card {
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  .intro-copy-card .speed-claim {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scan-control-button {
+    transition: none;
+  }
+}
