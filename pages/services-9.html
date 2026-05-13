@@ -54,6 +54,150 @@
             border: 0 !important;
         }
 
+        .workflow-slider {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 28px;
+            background:
+                radial-gradient(circle at 0% 0%, rgba(14, 165, 233, 0.12), transparent 34%),
+                radial-gradient(circle at 100% 100%, rgba(6, 182, 212, 0.10), transparent 34%),
+                rgba(255, 255, 255, 0.96);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.10);
+        }
+
+        .workflow-slider__viewport {
+            position: relative;
+            min-height: 430px;
+        }
+
+        .workflow-slide {
+            display: none;
+            padding: 34px;
+            min-height: 430px;
+        }
+
+        .workflow-slide.is-active {
+            display: grid;
+            align-content: center;
+            animation: workflowSlideIn 0.36s ease both;
+        }
+
+        .workflow-slide__eyebrow {
+            color: #0284c7;
+            font-size: 12px;
+            font-weight: 850;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .workflow-slide__title {
+            font-size: clamp(30px, 4vw, 46px);
+            line-height: 1.02;
+            letter-spacing: -0.04em;
+            color: #1a1a1b;
+            margin-bottom: 18px;
+        }
+
+        .workflow-slide__copy {
+            color: #475569;
+            font-size: 16px;
+            line-height: 1.65;
+            max-width: 760px;
+            margin-bottom: 22px;
+        }
+
+        .workflow-slide__points {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .workflow-mini-point {
+            padding: 18px;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .workflow-mini-point h3 {
+            font-size: 16px;
+            margin-bottom: 7px;
+            color: #1a1a1b;
+        }
+
+        .workflow-mini-point p {
+            color: #475569;
+            font-size: 14px;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        .workflow-slider__controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 18px 22px 22px;
+            border-top: 1px solid rgba(15, 23, 42, 0.08);
+            background: rgba(248, 250, 252, 0.72);
+        }
+
+        .workflow-slider__button {
+            appearance: none;
+            border: 1px solid rgba(15, 23, 42, 0.10);
+            border-radius: 999px;
+            background: #ffffff;
+            color: #1a1a1b;
+            font-size: 14px;
+            font-weight: 750;
+            padding: 10px 16px;
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .workflow-slider__button:hover {
+            transform: translateY(-1px);
+            border-color: rgba(14, 165, 233, 0.34);
+            box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+        }
+
+        .workflow-slider__dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+        }
+
+        .workflow-slider__dot {
+            width: 9px;
+            height: 9px;
+            border: 0;
+            border-radius: 999px;
+            background: rgba(100, 116, 139, 0.34);
+            cursor: pointer;
+            transition: width 0.2s ease, background 0.2s ease;
+        }
+
+        .workflow-slider__dot.is-active {
+            width: 28px;
+            background: #0ea5e9;
+        }
+
+        @keyframes workflowSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(14px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         @media (max-width: 768px) {
             .service-embed-frame {
                 aspect-ratio: 16 / 10;
@@ -64,11 +208,28 @@
                 aspect-ratio: 16 / 9;
                 min-height: 220px;
             }
+
+            .workflow-slide {
+                padding: 26px;
+            }
+
+            .workflow-slide__points {
+                grid-template-columns: 1fr;
+            }
+
+            .workflow-slider__controls {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
 
         @media (max-width: 480px) {
             .service-embed-frame {
                 min-height: 260px;
+            }
+
+            .workflow-slide {
+                padding: 22px;
             }
         }
     </style>
@@ -405,146 +566,127 @@
             </div>
         </section>
 
-        <section class="service-block" id="capture-scan" data-section="capture-scan">
+        <section class="service-block" id="workflow-services" data-section="workflow-services">
             <div class="service-block__head">
-                <div class="service-block__eyebrow">Capture &amp; Scan</div>
-                <div class="service-block__title">Fast, Efficient Spatial Capture</div>
+                <div class="service-block__eyebrow">Workflow</div>
+                <div class="service-block__title">Capture, process, host, and share the final experience</div>
             </div>
 
-            <div class="service-block__grid">
-                <div class="service-block__media">
-                    <div class="service-embed-stack">
-                        <div class="service-embed-card">
-                            <div class="service-embed-label">Example scan: Coworking space capture</div>
-                            <div class="service-embed-frame">
-                                <iframe src="https://cloud.splatlabs.ai/viewer/4dbcefcc-314a-4ae3-9f30-7adaf519eafd" title="Coworking space 3D scan" loading="lazy" allowfullscreen></iframe>
+            <div class="workflow-slider" id="workflowSlider">
+                <div class="workflow-slider__viewport">
+                    <article class="workflow-slide is-active" id="capture-scan" data-slide="0" aria-hidden="false">
+                        <div class="workflow-slide__eyebrow">Capture &amp; Scan</div>
+                        <h2 class="workflow-slide__title">Fast, Efficient Spatial Capture</h2>
+                        <p class="workflow-slide__copy">
+                            Capture interiors, hybrid spaces, and navigable environments at natural walking speed without lengthy tripod-based workflows. Routes, access, lighting, and capture priorities are planned before scanning begins so the final model serves the project goal.
+                        </p>
+
+                        <div class="workflow-slide__points">
+                            <div class="workflow-mini-point">
+                                <h3>PortalCam Walk-Through Capture</h3>
+                                <p>Capture spaces at natural walking speed using a multi-camera workflow built for practical on-site movement.</p>
+                            </div>
+                            <div class="workflow-mini-point">
+                                <h3>Coverage Planning</h3>
+                                <p>Routes, access, lighting, and capture priorities are planned before scanning begins.</p>
+                            </div>
+                            <div class="workflow-mini-point">
+                                <h3>Efficient On-Site Sessions</h3>
+                                <p>The workflow is designed to minimize disruption while still producing complete spatial coverage.</p>
+                            </div>
+                            <div class="workflow-mini-point">
+                                <h3>Coverage Review Before Departure</h3>
+                                <p>We confirm the capture is complete on site so there are fewer surprises during processing.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <div>
-                    <div class="service-block__points">
-                        <div class="service-point">
-                            <h3>PortalCam Walk-Through Capture</h3>
-                            <p>Capture interiors, hybrid spaces, and navigable environments at natural walking speed without lengthy tripod-based workflows.</p>
+                        <div class="service-block__pills">
+                            <span class="pill">PortalCam multi-camera rig</span>
+                            <span class="pill">4 sensors + LiDAR</span>
+                            <span class="pill">Walking-speed capture</span>
+                            <span class="pill">Interior and hybrid spaces</span>
                         </div>
-                        <div class="service-point">
-                            <h3>Coverage Planning</h3>
-                            <p>Routes, access, lighting, and capture priorities are planned before scanning begins so the final model serves the project goal.</p>
-                        </div>
-                        <div class="service-point">
-                            <h3>Efficient On-Site Sessions</h3>
-                            <p>The workflow is built to minimize disruption while still producing complete spatial coverage.</p>
-                        </div>
-                        <div class="service-point">
-                            <h3>Coverage Review Before Departure</h3>
-                            <p>We confirm the capture is complete on site so there are fewer surprises during processing.</p>
-                        </div>
-                    </div>
+                    </article>
 
-                    <div class="service-block__pills">
-                        <span class="pill">PortalCam multi-camera rig</span>
-                        <span class="pill">4 sensors + LiDAR</span>
-                        <span class="pill">Walking-speed capture</span>
-                        <span class="pill">Interior and hybrid spaces</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <article class="workflow-slide" id="processing-deliverables" data-slide="1" aria-hidden="true">
+                        <div class="workflow-slide__eyebrow">Processing &amp; Deliverables</div>
+                        <h2 class="workflow-slide__title">Turn Raw Capture into a Navigable 3D Environment</h2>
+                        <p class="workflow-slide__copy">
+                            Raw capture is reconstructed into a photorealistic, web-ready 3D environment designed for clear navigation and visual fidelity. Models are tuned for responsive viewing across modern browsers and devices.
+                        </p>
 
-        <section class="service-block" id="processing-deliverables" data-section="processing-deliverables">
-            <div class="service-block__head">
-                <div class="service-block__eyebrow">Processing &amp; Deliverables</div>
-                <div class="service-block__title">Turn Raw Capture into a Navigable 3D Environment</div>
-            </div>
-
-            <div class="service-block__grid">
-                <div class="service-block__media">
-                    <div class="service-embed-stack">
-                        <div class="service-embed-card">
-                            <div class="service-embed-label">Example scan: Finished high-end residential model</div>
-                            <div class="service-embed-frame">
-                                <iframe src="https://cloud.splatlabs.ai/viewer/f95e1016-b5db-40ae-81cc-c6354b1c470c" title="Finished residential 3D model" loading="lazy" allowfullscreen></iframe>
+                        <div class="workflow-slide__points">
+                            <div class="workflow-mini-point">
+                                <h3>Gaussian Splat Processing</h3>
+                                <p>Raw scan data is processed into a photorealistic, navigable environment.</p>
+                            </div>
+                            <div class="workflow-mini-point">
+                                <h3>Viewer-Ready Optimization</h3>
+                                <p>Models are prepared for practical web and mobile viewing instead of remaining as raw technical data.</p>
+                            </div>
+                            <div class="workflow-mini-point">
+                                <h3>Export Options</h3>
+                                <p>Deliverables can include hosted models, snapshots, teaser visuals, and archive exports where required.</p>
+                            </div>
+                            <div class="workflow-mini-point">
+                                <h3>Clear Visual Presentation</h3>
+                                <p>The final output is built to help clients understand and share a space.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <div>
-                    <div class="service-block__points">
-                        <div class="service-point">
-                            <h3>Gaussian Splat Processing</h3>
-                            <p>Raw capture is reconstructed into a photorealistic, web-ready 3D environment designed for clear navigation and visual fidelity.</p>
+                        <div class="service-block__pills">
+                            <span class="pill">Gaussian splat rendering</span>
+                            <span class="pill">Lixel CyberColor Studio</span>
+                            <span class="pill">Web and mobile optimized</span>
+                            <span class="pill">Viewer-ready delivery</span>
                         </div>
-                        <div class="service-point">
-                            <h3>Viewer-Ready Optimization</h3>
-                            <p>Models are tuned for responsive viewing across modern browsers and devices.</p>
-                        </div>
-                        <div class="service-point">
-                            <h3>Export Options</h3>
-                            <p>Depending on project requirements, deliverables can include hosted models, snapshots, teaser visuals, and archive exports.</p>
-                        </div>
-                        <div class="service-point">
-                            <h3>Clear Visual Presentation</h3>
-                            <p>The final output is built to help clients understand and share a space, not merely store raw data.</p>
-                        </div>
-                    </div>
+                    </article>
 
-                    <div class="service-block__pills">
-                        <span class="pill">Gaussian splat rendering</span>
-                        <span class="pill">Lixel CyberColor Studio</span>
-                        <span class="pill">Web and mobile optimized</span>
-                        <span class="pill">Viewer-ready delivery</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <article class="workflow-slide" id="hosting-enhancements" data-slide="2" aria-hidden="true">
+                        <div class="workflow-slide__eyebrow">Hosting, Sharing &amp; Enhancements</div>
+                        <h2 class="workflow-slide__title">Make the Digital Twin Useful After Delivery</h2>
+                        <p class="workflow-slide__copy">
+                            Deliver the project through a professional viewer that supports intuitive navigation and remote access. Tours can be delivered as direct links or embedded into websites, internal portals, and presentations.
+                        </p>
 
-        <section class="service-block" id="hosting-enhancements" data-section="hosting-enhancements">
-            <div class="service-block__head">
-                <div class="service-block__eyebrow">Hosting, Sharing &amp; Enhancements</div>
-                <div class="service-block__title">Make the Digital Twin Useful After Delivery</div>
-            </div>
-
-            <div class="service-block__grid">
-                <div class="service-block__media">
-                    <div class="service-embed-stack">
-                        <div class="service-embed-card">
-                            <div class="service-embed-label">Example scan: Hosted commercial space</div>
-                            <div class="service-embed-frame">
-                                <iframe src="https://cloud.splatlabs.ai/viewer/4dbcefcc-314a-4ae3-9f30-7adaf519eafd" title="Hosted commercial space 3D scan" loading="lazy" allowfullscreen></iframe>
+                        <div class="workflow-slide__points">
+                            <div class="workflow-mini-point">
+                                <h3>Hosted 3D Viewing</h3>
+                                <p>Deliver the project through a hosted viewer for easy access and review.</p>
+                            </div>
+                            <div class="workflow-mini-point">
+                                <h3>Simple Sharing and Embedding</h3>
+                                <p>Tours can be shared as direct links or embedded into websites and presentations.</p>
+                            </div>
+                            <div class="workflow-mini-point">
+                                <h3>Access Control Options</h3>
+                                <p>Private projects and restricted-access environments can be managed where required.</p>
+                            </div>
+                            <div class="workflow-mini-point">
+                                <h3>Enhancements and Extensions</h3>
+                                <p>Add annotations, guided views, branding, periodic updates, or hybrid workflows.</p>
                             </div>
                         </div>
-                    </div>
+
+                        <div class="service-block__pills">
+                            <span class="pill">Hosted viewer</span>
+                            <span class="pill">Share links and embeds</span>
+                            <span class="pill">Access control options</span>
+                            <span class="pill">Add-ons and updates</span>
+                        </div>
+                    </article>
                 </div>
 
-                <div>
-                    <div class="service-block__points">
-                        <div class="service-point">
-                            <h3>Hosted 3D Viewing</h3>
-                            <p>Deliver the project through a professional viewer that supports intuitive navigation and remote access.</p>
-                        </div>
-                        <div class="service-point">
-                            <h3>Simple Sharing and Embedding</h3>
-                            <p>Tours can be delivered as direct links or embedded into websites, internal portals, and presentations.</p>
-                        </div>
-                        <div class="service-point">
-                            <h3>Access Control Options</h3>
-                            <p>Private projects and restricted-access environments can be managed where required.</p>
-                        </div>
-                        <div class="service-point">
-                            <h3>Enhancements and Extensions</h3>
-                            <p>Add annotations, guided views, branding, periodic updates, or hybrid workflows that combine interior capture with broader reality capture deliverables.</p>
-                        </div>
+                <div class="workflow-slider__controls" aria-label="Workflow service controls">
+                    <button type="button" class="workflow-slider__button" id="workflowPrev">← Previous</button>
+
+                    <div class="workflow-slider__dots" role="tablist" aria-label="Workflow slides">
+                        <button type="button" class="workflow-slider__dot is-active" data-target-slide="0" aria-label="Show Capture and Scan"></button>
+                        <button type="button" class="workflow-slider__dot" data-target-slide="1" aria-label="Show Processing and Deliverables"></button>
+                        <button type="button" class="workflow-slider__dot" data-target-slide="2" aria-label="Show Hosting and Enhancements"></button>
                     </div>
 
-                    <div class="service-block__pills">
-                        <span class="pill">Hosted viewer</span>
-                        <span class="pill">Share links and embeds</span>
-                        <span class="pill">Access control options</span>
-                        <span class="pill">Add-ons and updates</span>
-                    </div>
+                    <button type="button" class="workflow-slider__button" id="workflowNext">Next →</button>
                 </div>
             </div>
         </section>
@@ -703,6 +845,65 @@
     });
 
     iframes.forEach((iframe) => observer.observe(iframe));
+})();
+</script>
+
+<script>
+(() => {
+    const slider = document.getElementById("workflowSlider");
+    if (!slider) return;
+
+    const slides = Array.from(slider.querySelectorAll(".workflow-slide"));
+    const dots = Array.from(slider.querySelectorAll(".workflow-slider__dot"));
+    const prev = document.getElementById("workflowPrev");
+    const next = document.getElementById("workflowNext");
+
+    if (!slides.length) return;
+
+    let activeIndex = 0;
+
+    function setSlide(index, updateHash = false) {
+        activeIndex = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+            const active = i === activeIndex;
+            slide.classList.toggle("is-active", active);
+            slide.setAttribute("aria-hidden", active ? "false" : "true");
+        });
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("is-active", i === activeIndex);
+        });
+
+        if (updateHash && slides[activeIndex].id) {
+            history.replaceState(null, "", `#${slides[activeIndex].id}`);
+        }
+    }
+
+    function setFromHash() {
+        const hash = window.location.hash.replace("#", "");
+        if (!hash) return;
+
+        const index = slides.findIndex(slide => slide.id === hash);
+        if (index >= 0) {
+            setSlide(index, false);
+        }
+    }
+
+    prev?.addEventListener("click", () => setSlide(activeIndex - 1, true));
+    next?.addEventListener("click", () => setSlide(activeIndex + 1, true));
+
+    dots.forEach(dot => {
+        dot.addEventListener("click", () => {
+            const target = Number(dot.dataset.targetSlide);
+            if (!Number.isNaN(target)) setSlide(target, true);
+        });
+    });
+
+    window.addEventListener("hashchange", setFromHash);
+
+    setFromHash();
+    setSlide(activeIndex, false);
 })();
 </script>
 
