@@ -619,6 +619,66 @@
     setActive(sections[0].dataset.section);
 })();
 </script>
+
+<script>
+(() => {
+    const iframeSelector = ".service-embed-frame iframe";
+    const iframes = Array.from(document.querySelectorAll(iframeSelector));
+
+    if (!iframes.length || !("IntersectionObserver" in window)) return;
+
+    const unloadDelay = 1200;
+    const timers = new WeakMap();
+
+    iframes.forEach((iframe) => {
+        if (!iframe.dataset.src && iframe.src) {
+            iframe.dataset.src = iframe.src;
+        }
+
+        iframe.src = "about:blank";
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const iframe = entry.target;
+            const savedSrc = iframe.dataset.src;
+
+            if (!savedSrc) return;
+
+            if (entry.isIntersecting) {
+                const existingTimer = timers.get(iframe);
+                if (existingTimer) {
+                    clearTimeout(existingTimer);
+                    timers.delete(iframe);
+                }
+
+                if (iframe.src === "about:blank" || iframe.src === window.location.href) {
+                    iframe.src = savedSrc;
+                }
+            } else {
+                const existingTimer = timers.get(iframe);
+                if (existingTimer) {
+                    clearTimeout(existingTimer);
+                }
+
+                const timer = setTimeout(() => {
+                    iframe.src = "about:blank";
+                    timers.delete(iframe);
+                }, unloadDelay);
+
+                timers.set(iframe, timer);
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: "250px 0px",
+        threshold: 0.05
+    });
+
+    iframes.forEach((iframe) => observer.observe(iframe));
+})();
+</script>
+
 <script src="../assets/js/nav.js"></script>
 </body>
 </html>
