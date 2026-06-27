@@ -16,7 +16,18 @@
     return window.visualViewport?.height || window.innerHeight || document.documentElement.clientHeight;
   };
 
+  function loadScan() {
+    const src = scanBackground.querySelector("iframe")?.dataset.src;
+    const iframe = scanBackground.querySelector("iframe");
+
+    if (iframe && src && iframe.getAttribute("src") !== src) {
+      iframe.setAttribute("src", src);
+    }
+  }
+
   function setScanControl(enabled) {
+    if (enabled) loadScan();
+
     body.classList.toggle("scan-control-active", enabled);
     scanBackground.classList.toggle("scan-background--manual-active", enabled);
     controlButton.setAttribute("aria-pressed", enabled ? "true" : "false");
