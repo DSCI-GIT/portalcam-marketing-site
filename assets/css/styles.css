@@ -156,6 +156,36 @@ header {
   color: var(--accent);
 }
 
+.nav-links a[href="/pricing/"] {
+  position: relative;
+  color: #0069d9;
+  font-weight: 750;
+}
+
+.nav-links a[href="/pricing/"]::after {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  background: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+  content: "";
+  animation: nav-deal-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes nav-deal-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.14);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(239, 68, 68, 0);
+  }
+}
+
 /* Hero */
 
 .hero-shell {
@@ -818,6 +848,28 @@ footer {
     color: var(--accent);
   }
 
+  .mobile-nav a[href="/pricing/"] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    color: #0069d9;
+    font-weight: 750;
+  }
+
+  .mobile-nav a[href="/pricing/"]::after {
+    flex: 0 0 auto;
+    padding: 4px 7px;
+    border-radius: 999px;
+    background: #fee2e2;
+    color: #b91c1c;
+    content: "25% OFF";
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1;
+  }
+
   .mobile-nav a + a {
     margin-top: 4px;
   }
@@ -826,6 +878,12 @@ footer {
   .logo-lockup,
   .logo-wrap {
     min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-links a[href="/pricing/"]::after {
+    animation: none;
   }
 }
 /* ===== FULL-SCREEN HERO SCAN BACKGROUND ===== */
