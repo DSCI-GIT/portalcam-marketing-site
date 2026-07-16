@@ -180,6 +180,14 @@
   width: 24%;
 }
 
+.compare-table__focus td {
+  background: rgba(0, 122, 255, 0.045);
+}
+
+.compare-table__focus td:first-child {
+  color: var(--accent);
+}
+
 /* GRID */
 
 .compare-grid-2,
